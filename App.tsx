@@ -2,14 +2,15 @@ const Stack = createNativeStackNavigator();
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 
-import Frame1 from "./screens/Frame1";
+import SignInPage from "./screens/SignInPage";
 import Frame2 from "./components/Frame2";
+import SignUpPage from "./screens/SignUpPage";
 import Frame from "./screens/Frame";
-import Property1Disable from "./components/Property1Disable";
-import Frame3 from "./components/Frame3";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { IconRegistry, ApplicationProvider } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
+
+import Home from "./screens/Home";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
@@ -57,8 +58,8 @@ const App = () => {
           {hideSplashScreen ? (
             <Stack.Navigator screenOptions={{ headerShown: false }}>
               <Stack.Screen
-                name="Frame1"
-                component={Frame1}
+                name="SignUpPage"
+                component={Home}
                 options={{ headerShown: false }}
               />
               <Stack.Screen

@@ -1,17 +1,20 @@
 import * as React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Border, FontFamily, FontSize, Color } from "../GlobalStyles";
+import { Button } from "@ui-kitten/components";
 
 const LoginContainer = () => {
   return (
     <View style={styles.groupParent}>
       <View style={styles.rectangleLayout}>
-        <View style={[styles.groupChild, styles.groupLayout]} />
+        <Button style={[styles.groupChild, styles.groupLayout]} status="basic">
         <Text style={[styles.signIn, styles.signTypo]}>Sign in</Text>
+        </Button>
       </View>
       <View style={[styles.rectangleGroup, styles.rectangleLayout]}>
-        <View style={[styles.groupItem, styles.groupLayout]} />
+        <Button style={[styles.groupItem, styles.groupLayout]} appearance="outlined" status="basic">
         <Text style={[styles.signUp, styles.signTypo]}>Sign up</Text>
+        </Button>
       </View>
     </View>
   );
@@ -44,6 +47,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderColor: Color.colorDarkslateblue,
     borderWidth: 1,
+    backgroundColor: Color.colorWhite,
   },
   signIn: {
     color: Color.colorDarkslateblue,

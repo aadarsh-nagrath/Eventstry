@@ -1,14 +1,27 @@
 import * as React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 import { Input } from "@ui-kitten/components";
 
-const SignInForm = () => {
+const SignUpForm = () => {
   return (
     <View style={styles.rectangleParent}>
     <View style={{ flexDirection: "row", alignItems: "center", display: "flex" }}>
+      <View style={[styles.groupChild, styles.groupLayout1]} />
+      <Image
+        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
+        contentFit="contain"
+        source={require("../assets/frame-1000006071.png")}
+      />
+      <Input
+        placeholder="Name"
+        style={[styles.inputbox, {flex:10}]} // adjust the style as needed
+      />
+    </View>
+
+
+    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -20 }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
         style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
@@ -22,12 +35,26 @@ const SignInForm = () => {
     </View>
 
 
-    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -18 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -20 }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
         style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
         contentFit="contain"
-        source={require("../assets/call192svgrepocom-3-1.png")}
+        source={require("../assets/emailSymbol.png")}
+      />
+      <Input
+        placeholder="Email"
+        style={[styles.inputbox, {flex:10}]} // adjust the style as needed
+      />
+    </View>
+
+
+    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -20 }}>
+      <View style={[styles.groupChild, styles.groupLayout1]} />
+      <Image
+        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
+        contentFit="contain"
+        source={require("../assets/passKeySymbol.png")}
       />
       <Input
         placeholder="Password"
@@ -145,4 +172,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInForm;
+export default SignUpForm;

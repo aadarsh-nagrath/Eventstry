@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Image } from "expo-image";
 import { StyleSheet, View, Text } from "react-native";
-import TermsAndConditionsSection from "../components/TermsAndConditionsSection";
+import Footer from "../components/Footer";
 import SearchContainer from "../components/SearchContainer";
 import LoginContainer from "../components/LoginContainer";
 import BookingFormContainer from "../components/BookingFormContainer";
@@ -10,7 +10,7 @@ import { Padding, Color, FontSize, FontFamily, Border } from "../GlobalStyles";
 const Frame = () => {
   return (
     <View style={styles.view}>
-      <TermsAndConditionsSection
+      <Footer
         uniqueIdentifier={require("../assets/instagramfsvgrepocom-2-1.png")}
       />
       <View style={styles.groupParent}>

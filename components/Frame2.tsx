@@ -18,7 +18,7 @@ const Frame2 = () => {
       <ImageBackground
         style={[styles.inner, styles.innerPosition]}
         resizeMode="cover"
-        source={require("../assets/frame319.png")}
+        source={require("../assets/Home19.png")}
       >
         <View
           style={[

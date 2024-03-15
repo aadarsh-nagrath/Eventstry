@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, ImageSourcePropType } from "react-native";
 import { Image } from "expo-image";
 import { Padding, Color, FontFamily, FontSize } from "../GlobalStyles";
 
-export type TermsAndConditionsSectionType = {
+export type FooterType = {
   uniqueIdentifier?: ImageSourcePropType;
 
   /** Style props */
@@ -14,10 +14,10 @@ const getStyleValue = (key: string, value: string | number | undefined) => {
   if (value === undefined) return;
   return { [key]: value === "unset" ? undefined : value };
 };
-const TermsAndConditionsSection = ({
+const Footer = ({
   uniqueIdentifier,
   frameViewTop,
-}: TermsAndConditionsSectionType) => {
+}: FooterType) => {
   const frameViewStyle = useMemo(() => {
     return {
       ...getStyleValue("top", frameViewTop),
@@ -105,7 +105,7 @@ const TermsAndConditionsSection = ({
 
 const styles = StyleSheet.create({
   framePosition: {
-    width: 1440,
+    width: "100%",
     overflow: "hidden",
     left: 0,
     position: "absolute",
@@ -225,11 +225,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   frameParent: {
-    top: 1619,
+    top: 619,
     backgroundColor: Color.colorAntiquewhite,
     height: 365,
-    overflow: "hidden",
   },
 });
 
-export default TermsAndConditionsSection;
+export default Footer;
