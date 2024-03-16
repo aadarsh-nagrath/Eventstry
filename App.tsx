@@ -11,6 +11,7 @@ import { IconRegistry, ApplicationProvider } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
 
 import Home from "./screens/Home";
+import ExplorePage from "./screens/ExplorePage";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
@@ -59,7 +60,7 @@ const App = () => {
             <Stack.Navigator screenOptions={{ headerShown: false }}>
               <Stack.Screen
                 name="SignUpPage"
-                component={Home}
+                component={ExplorePage}
                 options={{ headerShown: false }}
               />
               <Stack.Screen
