@@ -124,8 +124,8 @@ const Home = () => {
       </View>
       <View style={styles.cardContainer}>
         <DisplayCard
-          imageSource={require("../assets/rectangle-58.png")}
-          price="₹8,900"
+          imageSource={require("../assets/rectangle-62.png")}
+          price="₹7,000"
           heading="Venue 2"
           description="Let Eventstry plan your dream wedding for a day filled with joy, food, and love!"
           address="Jio World Garden, Bandra Kurla Complex (BKC), Bandra East, Mumbai, Maharashtra 400051"

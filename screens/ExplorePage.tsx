@@ -7,7 +7,9 @@ import Footer from "../components/Footer";
 import TermsAndConditions from "../components/TermsAndConditions";
 import styles from "./ExplorePageStyles";
 
-const ExplorePage = () => {
+const ExplorePage = ({ route }) => {
+    const { imageSource, price, heading, description, address } = route.params;
+
     return (
       <View style={styles.view}>
         <View style={styles2.alignfix}>
@@ -45,7 +47,7 @@ const ExplorePage = () => {
                 <Image
                     style={[styles.groupItem, styles.groupItemPosition]}
                     contentFit="cover"
-                    source={require("../assets/frame-12.png")}
+                    source={imageSource}
                 />
                 <View style={[styles.groupInner, styles.frameGroupPosition]} />
                 <View style={[styles.aboutWrapper, styles.wrapperPosition]}>
@@ -86,10 +88,10 @@ const ExplorePage = () => {
                     </View>
                     </View>
                     <View style={[styles.venue1Wrapper, styles.parentPosition]}>
-                    <Text style={[styles.venue1, styles.textTypo]}>Venue 1</Text>
+                    <Text style={[styles.venue1, styles.textTypo]}>{heading}</Text>
                     </View>
                     <View style={[styles.parent, styles.parentPosition]}>
-                    <Text style={[styles.text, styles.textTypo]}>₹8,900</Text>
+                    <Text style={[styles.text, styles.textTypo]}>{price}</Text>
                     <Image
                         style={styles.frameChild}
                         contentFit="cover"
@@ -123,8 +125,7 @@ const ExplorePage = () => {
                     </View>
                     <Text
                     style={[styles.jioWorldGarden, styles.jioWorldGardenTypo]}
-                    >{`Jio World Garden, BKC 
-Pt No: RG1A, G Block, Bandra Kurla Complex, Bandra East, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051`}</Text>
+                    >{address}</Text>
                     <View
                     style={[styles.getDirectionsWrapper, styles.component3ParentBorder]}
                     >

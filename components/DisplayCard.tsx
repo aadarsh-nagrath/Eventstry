@@ -3,35 +3,46 @@ import { Image } from "expo-image";
 import { Text, View } from "react-native";
 import styles from "./CardStyles";
 import { Button } from "@ui-kitten/components";
+import { useNavigation } from "@react-navigation/native";
 
-export type DisplayCardType = {
-  /** Style props */
+interface DisplayCardProps {
   propTop?: number | string;
   imageSource: any;
   price: string;
   heading: string;
   description: string;
   address: string;
-};
+}
 
 const getStyleValue = (key: string, value: string | number | undefined) => {
   if (value === undefined) return;
   return { [key]: value === "unset" ? undefined : value };
 };
 
-const DisplayCard = ({
+const DisplayCard: React.FC<DisplayCardProps> = ({
   propTop,
   imageSource,
   price,
   heading,
   description,
   address,
-}: DisplayCardType) => {
+}: DisplayCardProps) => {
+  const navigation = useNavigation();
   const frameView1Style = useMemo(() => {
     return {
       ...getStyleValue("top", propTop),
     };
   }, [propTop]);
+
+  const handleExploreNow = () => {
+    navigation.navigate("ExplorePage", {
+      imageSource,
+      price,
+      heading,
+      description,
+      address,
+    });
+  };
 
   return (
     <View style={[styles.frameParent, styles.groupItemLayout, frameView1Style, {position:"relative"}]}>
@@ -65,7 +76,7 @@ const DisplayCard = ({
       <View style={styles.component3Parent}>
         <View style={styles.component3}></View>
         <View style={[styles.rectangleGroup, styles.groupLayout]}>
-          <Button style={[styles.groupItem, styles.groupLayout]} appearance="outlined" status="basic">
+          <Button style={[styles.groupItem, styles.groupLayout]} appearance="outlined" status="basic" onPress={handleExploreNow}>
           <Text style={[styles.exploreNow, styles.sTypo]}>Explore Now</Text>
           </Button>
         </View>

@@ -1,6 +1,6 @@
-const Stack = createNativeStackNavigator();
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import SignInPage from "./screens/SignInPage";
 import Frame2 from "./components/Frame2";
@@ -11,16 +11,10 @@ import { IconRegistry, ApplicationProvider } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
 
 import Home from "./screens/Home";
+import DisplayCard from "./components/DisplayCard";
 import ExplorePage from "./screens/ExplorePage";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {
-  View,
-  Text,
-  Pressable,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+const Stack = createStackNavigator();
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
@@ -56,20 +50,11 @@ const App = () => {
       <IconRegistry icons={[MaterialIconsPack]} />
       <ApplicationProvider {...eva} theme={eva.light}>
         <NavigationContainer>
-          {hideSplashScreen ? (
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
-              <Stack.Screen
-                name="SignUpPage"
-                component={ExplorePage}
-                options={{ headerShown: false }}
-              />
-              <Stack.Screen
-                name="Frame"
-                component={Frame}
-                options={{ headerShown: false }}
-              />
-            </Stack.Navigator>
-          ) : null}
+          <Stack.Navigator initialRouteName="SignUpPage" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="SignUpPage" component={Home} />
+            <Stack.Screen name="Frame" component={Frame} />
+            <Stack.Screen name="ExplorePage" component={ExplorePage} />
+          </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>
     </>
