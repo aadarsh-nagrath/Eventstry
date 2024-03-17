@@ -2,15 +2,15 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet } from "react-native"; // Added import
-import SignInPage from "./screens/SignInPage";
-import SignUpPage from "./screens/SignUpPage";
-import SeeMenu from "./screens/SeeMenu";
+import SignInPage from "./src/screens/SignInPage";
+import SignUpPage from "./src/screens/SignUpPage";
+import SeeMenu from "./src/screens/SeeMenu";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { IconRegistry, ApplicationProvider } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
 
-import Home from "./screens/Home";
-import ExplorePage from "./screens/ExplorePage";
+import Home from "./src/screens/Home";
+import ExplorePage from "./src/screens/ExplorePage";
 
 const Stack = createStackNavigator();
 
