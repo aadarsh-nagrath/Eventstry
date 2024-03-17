@@ -2,12 +2,16 @@ import * as React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Image } from "expo-image";
 import { Border, Color, FontSize, FontFamily } from "../GlobalStyles";
+import { Input } from "@ui-kitten/components";
 
 const SearchContainer = () => {
   return (
     <View style={styles.rectangleParent}>
       <View style={styles.groupChild} />
-      <Text style={styles.search}>Search</Text>
+      <Input
+        placeholder=" Search"
+        style={[styles.inputbox, {flex:10, zIndex: 3}]} // adjust the style as needed
+      />
       <Image
         style={styles.iconOutlinedSearch}
         contentFit="cover"
@@ -29,6 +33,16 @@ const styles = StyleSheet.create({
     height: 48,
     position: "absolute",
   },
+  inputbox: {
+    top: 1,
+    backgroundColor: "colorWhite",
+    height: 150,
+    width: 372,
+    paddingTop: 0,
+    position: "relative",
+    margin: 0,
+    border: "none",
+  },
   search: {
     top: 11,
     left: 24,
@@ -41,12 +55,12 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   iconOutlinedSearch: {
-    top: 10,
+    top: -10,
     left: 363,
     width: 24,
     height: 24,
     overflow: "hidden",
-    position: "absolute",
+    position: "relative",
   },
   rectangleParent: {
     top: 18,

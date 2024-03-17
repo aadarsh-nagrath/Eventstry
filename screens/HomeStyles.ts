@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
       overflow: "hidden",
     },
     view: {
-      height: 2383,
+      height: 2420,
       overflow: "hidden",
       backgroundColor: Color.colorWhite,
       width: 1440,

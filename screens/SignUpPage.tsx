@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import { StyleSheet, View, ImageBackground, Text, Dimensions } from "react-native";
+import { StyleSheet, View, ImageBackground, Text, Dimensions, TouchableOpacity } from "react-native";
 import SignUpForm from "../components/SignUpForm";
 import styles from "./SignInPageStyle";
 import { Button } from "@ui-kitten/components";
+import { useNavigation } from "@react-navigation/native";
 
 const SignUpPage = () => {
+  const navigation = useNavigation();
   const windowWidth = Dimensions.get('window').width;
 
   return (
@@ -40,11 +42,11 @@ const SignUpPage = () => {
         planning journey with us!
         </Text>
         <SignUpForm />
-        <Button style={[styles2.bottonposition, styles.groupItemLayout, {backgroundColor: "#01235b"}]}> Sign Up</Button>
+        <Button onPress={() => navigation.navigate("Home")} style={[styles2.bottonposition, styles.groupItemLayout, {backgroundColor: "#01235b"}]}> Sign Up</Button>
         <View
           style={[styles2.byClickingOnPosition, styles.signPosition]}
         >
-          <Text style={[styles.byClickingOnContainer]}>
+          <Text style={[styles.byClickingOnContainer, {marginBottom: 10}]}>
             <Text
               style={styles.byClickingOnTypo}
             >{`By clicking on Sign up, you agree to our `}</Text>
@@ -58,9 +60,11 @@ const SignUpPage = () => {
             <Text style={styles.byClickingOnTypo}>.</Text>
           </Text>
         </View>
-        <Text style={[styles.noAccountYetContainer, styles.containerTypo]}>
-          <Text style={styles.andClr}>{`Already an Account? `}</Text>
-          <Text style={styles.signTypo}>Sign in</Text>
+        <Text style={[styles2.alreadyAccount, styles2.containerT, {marginTop: 15}]}>
+          <Text style={styles.andClr}>{`Already have an Account? `}</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("SignInPage")}>
+          <Text style={styles2.signinTypo}>Sign In</Text>
+          </TouchableOpacity>
         </Text>
       </View>
     </View>
@@ -75,10 +79,26 @@ const styles2 = StyleSheet.create({
     top: 545,
     marginLeft: 45,
   },
+  signinTypo: {
+    color: "#01235b",
+    fontFamily: "Avenir",
+    fontSize: "18px",
+    fontWeight: "800",
+  },
+  alreadyAccount: {
+    left: 760,
+    position: "relative",
+    zIndex: 40,
+  },
+  containerT: {
+    textAlign: "left",
+    position: "relative",
+    top: 670,
+  },
   byClickingOnPosition: {
     top: 621,
     borderStyle: "solid",
-    borderColor: "Color.colorGainsboro",
+    borderColor: "#e0dcdc",
     borderBottomWidth: 1,
     flexDirection: "row",
     alignItems: "center",

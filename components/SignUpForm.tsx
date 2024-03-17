@@ -1,12 +1,25 @@
 import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 import { Input } from "@ui-kitten/components";
+import { useState } from "react";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
 const SignUpForm = () => {
-  return (
-    <View style={styles.rectangleParent}>
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [showOTPField, setShowOTPField] = useState(false);
+
+  const handleVerify = () => {
+    if (isValidPhoneNumber(phoneNumber)) {
+      setShowOTPField(true);
+    } else {
+      alert("Please enter a valid phone number");
+    }
+  };
+
+return (
+  <View style={styles.rectangleParent}>
     <View style={{ flexDirection: "row", alignItems: "center", display: "flex" }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
@@ -16,12 +29,11 @@ const SignUpForm = () => {
       />
       <Input
         placeholder="Name"
-        style={[styles.inputbox, {flex:10}]} // adjust the style as needed
+        style={[styles.inputbox, {flex:10}]}
       />
     </View>
 
-
-    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -20 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -30 }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
         style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
@@ -30,12 +42,25 @@ const SignUpForm = () => {
       />
       <Input
         placeholder="Phone"
-        style={[styles.inputbox, {flex:10}]} // adjust the style as needed
+        style={[styles.inputbox, {flex:10}]}
+        onChangeText={setPhoneNumber}
       />
+      <TouchableOpacity style={styles.verifybtn} onPress={handleVerify}>
+        <Text style={styles.verifyText}>Verify</Text>
+      </TouchableOpacity>
     </View>
 
+    {showOTPField && phoneNumber.trim() !== "" && (
+      <View style={[{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -30 }]}>
+        <View style={[styles.groupChild, styles.groupLayout1]} />
+        <Input
+          placeholder="Enter the OTP"
+          style={[styles.inputbox, {flex:10}]}
+        />
+      </View>
+    )}
 
-    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -20 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -30 }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
         style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
@@ -48,11 +73,10 @@ const SignUpForm = () => {
       />
     </View>
 
-
-    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -20 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -30 }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
-        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
+        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 50, width: 50, resizeMode: "contain"}]}
         contentFit="contain"
         source={require("../assets/passKeySymbol.png")}
       />
@@ -62,7 +86,7 @@ const SignUpForm = () => {
       />
     </View>
   </View>
-  );
+);
 };
 
 const styles = StyleSheet.create({
@@ -79,6 +103,25 @@ const styles = StyleSheet.create({
   groupPosition: {
     top: 0,
     left: 0,
+  },
+  verifybtn: {
+    height: 40,
+    width: 80,
+    backgroundColor: "#84848c",
+    borderRadius: "5px",
+    color: "white",
+    border: "none",
+    fontWeight: "600",
+    position: "absolute",
+    zIndex: 3,
+    right: 20,
+    justifyContent: "center",
+    top: 7
+  },
+  verifyText: {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "600",
   },
   inputbox: {
     backgroundColor: Color.colorWhite,

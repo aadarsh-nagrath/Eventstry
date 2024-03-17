@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import { View, ImageBackground, Text, Dimensions } from "react-native";
+import { View, ImageBackground, Text, Dimensions, TouchableOpacity } from "react-native";
 import SignInForm from "../components/SignInForm";
 import styles from "./SignInPageStyle";
 import { Button } from "@ui-kitten/components";
+import { useNavigation } from "@react-navigation/native";
 
 const SignInPage = () => {
+  const naviagtion = useNavigation();
   const windowWidth = Dimensions.get('window').width;
 
   return (
@@ -43,7 +45,7 @@ const SignInPage = () => {
         <Text style={[styles.forgotPassword, styles.byClickingOnTypo]}>
           Forgot Password?
         </Text>
-        <Button style={[styles.rectangleParent, styles.groupItemLayout, {backgroundColor: "#01235b"}]}> Sign in</Button>
+        <Button onPress={() => naviagtion.navigate("Home")} style={[styles.rectangleParent, styles.groupItemLayout, {backgroundColor: "#01235b"}]}> Sign in</Button>
         <View
           style={[styles.byClickingOnSignInYouAgWrapper, styles.signPosition]}
         >
@@ -63,7 +65,9 @@ const SignInPage = () => {
         </View>
         <Text style={[styles.noAccountYetContainer, styles.containerTypo]}>
           <Text style={styles.andClr}>{`No account yet? `}</Text>
+          <TouchableOpacity onPress={() => naviagtion.navigate("SignUpPage")}>
           <Text style={styles.signTypo}>Sign up</Text>
+          </TouchableOpacity>
         </Text>
       </View>
     </View>

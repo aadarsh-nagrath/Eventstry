@@ -25,9 +25,9 @@ const SignInForm = () => {
     <View style={{ flexDirection: "row", alignItems: "center", display: "flex", marginTop: -18 }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
-        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
+        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 50, width: 50, resizeMode: "contain"}]}
         contentFit="contain"
-        source={require("../assets/call192svgrepocom-3-1.png")}
+        source={require("../assets/passKeySymbol.png")}
       />
       <Input
         placeholder="Password"

@@ -1,49 +1,33 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import {StyleSheet ,View, Text } from "react-native";
-import LoginContainer from "../components/LoginContainer";
+import {StyleSheet ,View, Text, TouchableOpacity } from "react-native";
 import HeaderComponent from "../components/HeaderComponent";
 import Footer from "../components/Footer";
 import TermsAndConditions from "../components/TermsAndConditions";
 import styles from "./ExplorePageStyles";
+import { useNavigation } from "@react-navigation/native";
 
 const ExplorePage = ({ route }) => {
+    const navigation = useNavigation(); 
     const { imageSource, price, heading, description, address } = route.params;
+
+    const handleSeeMenuClick = () => {
+        navigation.navigate('SeeMenu', {
+            imageSource,
+            price,
+            heading,
+            description,
+            address
+        });
+    };
 
     return (
       <View style={styles.view}>
         <View style={styles2.alignfix}>
-                <HeaderComponent />
                 <View style={styles.mainContent}>
-                <View style={styles.groupParent}>
-                <View
-                    style={[
-                    styles.logo39ab30e9cd984a48cdd3b9dbbWrapper,
-                    styles.logo39ab30e9cd984a48cdd3b9dbbLayout,
-                    ]}
-                >
-                    <Image
-                    style={[
-                        styles.logo39ab30e9cd984a48cdd3b9dbbIcon,
-                        styles.logo39ab30e9cd984a48cdd3b9dbbLayout,
-                    ]}
-                    contentFit="cover"
-                    source={require("../assets/logo39ab30e9cd984a48cdd3b9dbbbc80549-2.png")}
-                    />
-                </View>
-                <View style={styles.rectangleParent}>
-                    <View style={styles.groupChild} />
-                    <Text style={[styles.search, styles.aboutTypo]}>Search</Text>
-                    <Image
-                    style={[styles.iconOutlinedSearch, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require("../assets/icon--outlined--search.png")}
-                    />
-                </View>
-                </View>
-                <LoginContainer />
+                <HeaderComponent />
                 <View style={styles.backParent}>
-                <Text style={[styles.back, styles.backTypo]}>Back</Text>
+                <Text onPress={() => navigation.navigate("Home")} style={[styles.back, styles.backTypo]}>Back</Text>
                 <Image
                     style={[styles.groupItem, styles.groupItemPosition]}
                     contentFit="cover"
@@ -63,19 +47,23 @@ const ExplorePage = ({ route }) => {
                     special day to the fullest. Let us bring your wedding dreams to life!
                 </Text>
                 <View style={styles.component3}>
-                    <Text style={styles.seeMenu}>See Menu</Text>
-                    <Image
-                    style={[styles.divsCardIcon, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require("../assets/divscardicon.png")}
-                    />
+                    <TouchableOpacity onPress={handleSeeMenuClick}>
+                        <Text style={styles.seeMenu}>See Menu</Text>
+                    </TouchableOpacity>
+                        <Image
+                        style={[styles.divsCardIcon, styles.iconLayout]}
+                        contentFit="cover"
+                        source={require("../assets/divscardicon.png")}
+                        />
                 </View>
                 <View style={[styles.frameParent, styles.parentLayout]}>
                     <View
                     style={[styles.component3Parent, styles.component3ParentBorder]}
                     >
                     <View style={styles.component31}>
+                    <TouchableOpacity onPress={handleSeeMenuClick}>
                         <Text style={styles.seeMenu}>See Menu</Text>
+                        </TouchableOpacity>
                         <Image
                         style={[styles.divsCardIcon, styles.iconLayout]}
                         contentFit="cover"
@@ -107,13 +95,13 @@ const ExplorePage = ({ route }) => {
                     <Text
                         style={[styles.cancellationPolicyAnd, styles.backTypo]}
                     >{`Cancellation policy and payment terms
-        Easy access and parking
-        Event insurance is included
-        Cancellation policy and payment terms
-        Easy access and parking
-        Event insurance is included
-        Cancellation policy and payment terms
-        Easy access and parking`}</Text>
+    - Easy access and parking
+    - Event insurance is included
+    - Cancellation policy and payment terms
+    - Easy access and parking
+    - Event insurance is included
+    - Cancellation policy and payment terms
+    - Easy access and parking`}</Text>
                     </View>
                 </View>
                 <View style={styles.groupContainer}>
@@ -138,10 +126,10 @@ const ExplorePage = ({ route }) => {
                 </View>
 
             </View>
-            <View style={styles2.below}>
-                <Footer/>
+                <Footer
+                frameViewTop={1600}
+                />
             </View>
-        </View>
       </View>
     );
   };

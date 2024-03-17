@@ -13,7 +13,6 @@ import HeaderComponent from "../components/HeaderComponent";
 const Home = () => {
   //Dummy Data
   const cities = [
-    "Enter city",
     "New York",
     "Los Angeles",
     "Chicago",
@@ -60,6 +59,7 @@ const Home = () => {
             onValueChange={(itemValue, itemIndex) =>
               handleCityChange(itemValue)
             }>
+            <Picker.Item label="Enter City" value="" />
             {cities.map((city, index) => (
               <Picker.Item label={city} value={city} key={index} />
             ))}
@@ -89,7 +89,7 @@ const Home = () => {
       </View>
 
       <Image
-        style={styles.child}
+        style={[styles.child, {borderRadius: "50%"}]}
         contentFit="cover"
         source={require("../assets/ellipse-3.png")}
       />
@@ -109,7 +109,7 @@ const Home = () => {
 
       
       <LinearGradient
-        style={[styles.frameGroup, styles.groupLayout]}
+        style={[styles.frameGroup, styles.groupLayout, {marginBottom: 50}]}
         locations={[0, 0.81]}
         colors={["#f4e9e3", "rgba(255, 255, 255, 0)"]}
       >
@@ -197,7 +197,7 @@ const Home = () => {
       </LinearGradient>
       <Footer
         uniqueIdentifier={require("../assets/instagramfsvgrepocom-2-11.png")}
-        frameViewTop={2018}
+        frameViewTop={2058}
       />
     </View>
     </View>

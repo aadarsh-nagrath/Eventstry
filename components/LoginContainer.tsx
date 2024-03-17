@@ -2,17 +2,19 @@ import * as React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Border, FontFamily, FontSize, Color } from "../GlobalStyles";
 import { Button } from "@ui-kitten/components";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginContainer = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.groupParent}>
       <View style={styles.rectangleLayout}>
-        <Button style={[styles.groupChild, styles.groupLayout]} status="basic">
+        <Button onPress={() => navigation.navigate("SignInPage")} style={[styles.groupChild, styles.groupLayout]} status="basic">
         <Text style={[styles.signIn, styles.signTypo]}>Sign in</Text>
         </Button>
       </View>
       <View style={[styles.rectangleGroup, styles.rectangleLayout]}>
-        <Button style={[styles.groupItem, styles.groupLayout]} appearance="outlined" status="basic">
+        <Button onPress={() => navigation.navigate("SignUpPage")} style={[styles.groupItem, styles.groupLayout]} appearance="outlined" status="basic">
         <Text style={[styles.signUp, styles.signTypo]}>Sign up</Text>
         </Button>
       </View>

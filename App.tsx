@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import SignInPage from "./screens/SignInPage";
 import Frame2 from "./components/Frame2";
 import SignUpPage from "./screens/SignUpPage";
+import SeeMenu from "./screens/SeeMenu";
 import Frame from "./screens/Frame";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { IconRegistry, ApplicationProvider } from "@ui-kitten/components";
@@ -50,10 +51,12 @@ const App = () => {
       <IconRegistry icons={[MaterialIconsPack]} />
       <ApplicationProvider {...eva} theme={eva.light}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="SignUpPage" screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="SignUpPage" component={Home} />
-            <Stack.Screen name="Frame" component={Frame} />
+          <Stack.Navigator initialRouteName="SignInPage" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="SignInPage" component={SignInPage} />
+            <Stack.Screen name="SignUpPage" component={SignUpPage} />
+            <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="ExplorePage" component={ExplorePage} />
+            <Stack.Screen name="SeeMenu" component={SeeMenu} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>
