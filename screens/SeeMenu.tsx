@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import {StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import {Modal, ScrollView, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import IntimateDecorationContainer from "../components/IntimateDecorationC";
 import ProductCardContainer from "../components/ProductCardContainer";
 import styles from "./SeeMenuStyles";
@@ -11,6 +11,7 @@ import StarterComponent from "../components/StarterCompo";
 import { useState } from "react";
 import EntertainmentCompo from "../components/EntertainmentCompo";
 import { useRoute } from "@react-navigation/native";
+import Menu from "./Menu";
 
 
 const RectangleRadioButton = ({ selected, onSelect }) => {
@@ -25,28 +26,38 @@ const RectangleRadioButton = ({ selected, onSelect }) => {
 const SeeMenu = () => {
   const route = useRoute<{ params: { imageSource: string, price: number, heading: string, description: string, address: string } } & { key: string, name: string }>();
   const { imageSource, price, heading, description, address } = route.params;
-
-  const [counter, setCounter] = React.useState(0);
-
-
-  const handleIncrement = () => {
-    setCounter(counter + 25);
-  };
-
-  const handleDecrement = () => {
-    setCounter(counter - 25);
-  };
-
   const [isChecked, setIsChecked] = useState(false);
+  const [counter, setCounter] = React.useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const handleInceDecr = (action) => {
+    if (action === 'increment' && counter < 25) {
+      setCounter(counter + 1);
+    } else if (action === 'decrement' && counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
 
   const handlePress = () => {
     setIsChecked(!isChecked);
   };
 
 
+
+  // Function to open the modal
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+
   return (
     <View style={styles.view}>
-      <View style={[styles.res, {zIndex: 7}]}>
+      <View style={[styles.res, {zIndex: 2}]}>
         <HeaderComponent/>
       </View>
       {/* <View style={styles.fcompo} />; */}
@@ -134,6 +145,7 @@ const SeeMenu = () => {
         style={[
           styles.pleaseSelectTheEventDateParent,
           styles.addParentShadowBox,
+          {zIndex: 3}
         ]}
       >
         <Text
@@ -185,21 +197,21 @@ const SeeMenu = () => {
             <Text style={[styles.text9, styles.pleaseContainerTypo]}>{counter}</Text>
           </View>
           
-          <TouchableOpacity style={styles.ellipseParent3} onPress={handleIncrement}>
-        <Image
-          style={[styles.groupChild9, styles.groupIconLayout]}
-          contentFit="cover"
-          source={require("../assets/ellipse-1700.png")}
-        />
+          <TouchableOpacity style={styles.ellipseParent3} onPress={() => handleInceDecr('increment')}>
+            <Image
+              style={[styles.groupChild9, styles.groupIconLayout, {height: 50, width: 30, marginLeft: -5}]}
+              contentFit="cover"
+              source={require("../assets/plus.png")}
+            />
+          </TouchableOpacity>
         
-        </TouchableOpacity>
-      <TouchableOpacity style={styles.ellipseParent3} onPress={handleDecrement}>
-        <Image
-          style={[styles.groupIcon, styles.groupIconLayout, {top: "7"}]}
-          contentFit="cover"
-          source={require("../assets/group-1261153004.png")}
-        />
-      </TouchableOpacity>
+          <TouchableOpacity style={[styles2.ellipseParent3]} onPress={() => handleInceDecr('decrement')}>
+            <Image
+              style={[styles2.groupIcon, styles.groupIconLayout, {top: "7"}]}
+              contentFit="cover"
+              source={require("../assets/group-1261153004.png")}
+            />
+          </TouchableOpacity>
         </View>
         <View
           style={[
@@ -239,9 +251,11 @@ const SeeMenu = () => {
         </View>
         
         <View style={[styles.component3, styles.component3Position]}>
+          <TouchableOpacity onPress={openModal}>
           <Text style={[styles.seeMenu, styles.addContainerTypo]}>
             See Menu
           </Text>
+          </TouchableOpacity>
           <Image
             style={[styles.divsCardIcon, styles.groupIconLayout]}
             contentFit="cover"
@@ -381,6 +395,24 @@ const SeeMenu = () => {
 
       <View style={{height:250}} />
 
+      {/* Modal Component */}
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <View style={styles2.modalContainer}>
+        <ScrollView contentContainerStyle={styles2.scrollViewContent}>
+          <View style={styles2.modalContent}>
+            <Menu closeModal={closeModal} />
+          </View>
+          </ScrollView>
+        </View>
+      </Modal>
+
+
 
     </View>
   );
@@ -408,6 +440,44 @@ const styles2 = StyleSheet.create({
     height: 12,
     borderRadius: 2,
     backgroundColor: "#01235b",
+  },
+  modalContainer: {
+    flex: 1,
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContent: {
+    backgroundColor: "white",
+    padding: 50,
+    paddingRight: 700,
+    paddingBottom: 2900,
+    borderRadius: 10,
+    alignItems: "center",
+    flex: 1, // Ensure it takes all available space
+  },
+  closeButton: {
+    marginTop: 20,
+    color: "blue",
+    fontWeight: "bold",
+  },
+  scrollViewContent: {
+    flexGrow: 1,
+    justifyContent: "center",
+  },
+  ellipseParent3: {
+    top: 7,
+    height: 25,
+    width: 24,
+    right: 0,
+    position: "absolute",
+  },
+  groupIcon: {
+    top: 8,
+    left: 0,
+    position: "absolute",
   },
 });
 
