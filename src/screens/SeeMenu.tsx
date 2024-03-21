@@ -329,11 +329,13 @@ const SeeMenu = () => {
       </View>
 
         {/* Add a CAKE Component*/}
-
+      
       <View style={[styles.addACakeParent, styles.addParentShadowBox]}>
         <Text style={[styles.addACake, styles.addContainerTypo]}>
           Add a Cake
         </Text>
+        <View style={{flex:1, top: 100, marginTop: -40, paddingTop:0}}>
+        <ScrollView>
         <View style={[styles.frameParent1, styles.component3Position]}>
           <ProductCardContainer />
           <ProductCardContainer propMarginTop={16} />
@@ -341,6 +343,9 @@ const SeeMenu = () => {
           <ProductCardContainer propMarginTop={16} />
           <ProductCardContainer propMarginTop={16} />
           <ProductCardContainer propMarginTop={16} />
+          
+        </View>
+        </ScrollView>
         </View>
       </View>
 
@@ -377,16 +382,28 @@ const SeeMenu = () => {
         <Text style={[styles.whatKindOf1, styles.addContainerTypo]}>
           What kind of Entertainment would you like?
         </Text>
+        <View style={{flex:1, top: 100, marginTop: -40, paddingTop:0, overflow: "scroll"}}>
+        {/* <ScrollView> */}
         <View style={[styles.frameParent1, styles.component3Position]}>
           <EntertainmentCompo itemName="Live Music" price="₹8,900/-" />
           <br/>
           <EntertainmentCompo itemName="Magician" price="₹8,900/-" />
           <br/>
           <EntertainmentCompo itemName="Caricature Artist" price="₹8,900/-" />
+          <br/>
+          <EntertainmentCompo itemName="Singer" price="₹5,900/-" />
+          <br/>
+          <EntertainmentCompo itemName="Traditional Dancers" price="₹10,500/-" />
+          <br/>
+          <EntertainmentCompo itemName="Singer" price="₹5,900/-" />
+          <br/>
+          <EntertainmentCompo itemName="Traditional Dancers" price="₹10,500/-" />
+        </View>
+        {/* </ScrollView> */}
         </View>
       </View>
 
-      <View style={[styles.groupLayout2,{left:370, width: 350, position: "absolute", top: 3700, bottom: 30}]}>
+      <View style={[styles.groupLayout2,{left:370, width: 350, position: "absolute", top: 3200, bottom: 30}]}>
         <View style={[styles.groupItem, styles.groupPosition]} />
         <Text style={[styles.proceedToPayment, styles.textTypo2]}>
           Proceed to Payment

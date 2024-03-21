@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   logo39ab30e9cd984a48cdd3b9dbbIcon: {
     top: 0,
-    left: 0,
+    left: -45,
     overflow: "hidden",
   },
 });

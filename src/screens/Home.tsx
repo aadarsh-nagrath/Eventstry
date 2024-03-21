@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
+import { Text, StyleSheet, View, Pressable, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import DisplayCard from "../components/DisplayCard";
@@ -11,6 +11,7 @@ import { TouchableOpacity } from "react-native";
 import HeaderComponent from "../components/HeaderComponent";
 
 const Home = () => {
+  const { width, height } = Dimensions.get("window");
   //Dummy Data
   const cities = [
     "New York",
@@ -99,11 +100,7 @@ const Home = () => {
         <Text style={[styles.findThePerfect, styles.findLayout]}>
           Find the perfect celebration for your perfect occasion
         </Text>
-        {/* <Image
-          style={styles.groupChild}
-          contentFit="cover"
-          source={require("../../assets/arrow-11.png")}
-        /> */}
+        {width >= 360 && width < 415 && <Text style={{color:"orange", fontSize: 16 }}>Hello</Text>}
       </View>
       <HeaderComponent />
 
@@ -131,71 +128,72 @@ const Home = () => {
           address="Jio World Garden, Bandra Kurla Complex (BKC), Bandra East, Mumbai, Maharashtra 400051"
         />
       </View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-58.png")}
-    price="₹10,500"
-    heading="Grand Palace"
-    description="Celebrate your special day at the luxurious Grand Palace. Let us make your event unforgettable!"
-    address="Grand Palace, Juhu Tara Road, Juhu, Mumbai, Maharashtra 400049"
-  />
-</View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-65.jpg")}
-    price="₹7,200"
-    heading="Sapphire Gardens"
-    description="Experience elegance and charm at the Sapphire Gardens. Perfect for weddings and receptions!"
-    address="Sapphire Gardens, Andheri West, Mumbai, Maharashtra 400058"
-  />
-</View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-66.jpg")}
-    price="₹9,800"
-    heading="Emerald Meadows"
-    description="Host your event amidst the lush greenery and serene ambiance of Emerald Meadows."
-    address="Emerald Meadows, Powai, Mumbai, Maharashtra 400076"
-  />
-</View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-62.png")}
-    price="₹11,300"
-    heading="Pearl Palace"
-    description="Create beautiful memories at the Pearl Palace, where dreams come to life."
-    address="Pearl Palace, Worli Sea Face, Mumbai, Maharashtra 400030"
-  />
-</View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-58.png")}
-    price="₹8,600"
-    heading="Royal Orchid Hall"
-    description="Indulge in luxury and sophistication at the Royal Orchid Hall. Your perfect event awaits!"
-    address="Royal Orchid Hall, Lower Parel, Mumbai, Maharashtra 400013"
-  />
-</View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-62.png")}
-    price="₹12,000"
-    heading="Majestic Manor"
-    description="Experience opulence at its finest at the Majestic Manor. Book now for an unforgettable event!"
-    address="Majestic Manor, Malabar Hill, Mumbai, Maharashtra 400006"
-  />
-</View>
-<View style={styles.cardContainer}>
-  <DisplayCard
-    imageSource={require("../../assets/rectangle-65.jpg")}
-    price="₹6,900"
-    heading="Ivory Tower"
-    description="Discover a blend of modern elegance and traditional charm at the Ivory Tower."
-    address="Ivory Tower, Colaba, Mumbai, Maharashtra 400005"
-  />
-</View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-58.png")}
+          price="₹10,500"
+          heading="Grand Palace"
+          description="Celebrate your special day at the luxurious Grand Palace. Let us make your event unforgettable!"
+          address="Grand Palace, Juhu Tara Road, Juhu, Mumbai, Maharashtra 400049"
+        />
+      </View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-65.jpg")}
+          price="₹7,200"
+          heading="Sapphire Gardens"
+          description="Experience elegance and charm at the Sapphire Gardens. Perfect for weddings and receptions!"
+          address="Sapphire Gardens, Andheri West, Mumbai, Maharashtra 400058"
+        />
+      </View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-66.jpg")}
+          price="₹9,800"
+          heading="Emerald Meadows"
+          description="Host your event amidst the lush greenery and serene ambiance of Emerald Meadows."
+          address="Emerald Meadows, Powai, Mumbai, Maharashtra 400076"
+        />
+      </View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-62.png")}
+          price="₹11,300"
+          heading="Pearl Palace"
+          description="Create beautiful memories at the Pearl Palace, where dreams come to life."
+          address="Pearl Palace, Worli Sea Face, Mumbai, Maharashtra 400030"
+        />
+      </View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-58.png")}
+          price="₹8,600"
+          heading="Royal Orchid Hall"
+          description="Indulge in luxury and sophistication at the Royal Orchid Hall. Your perfect event awaits!"
+          address="Royal Orchid Hall, Lower Parel, Mumbai, Maharashtra 400013"
+        />
+      </View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-62.png")}
+          price="₹12,000"
+          heading="Majestic Manor"
+          description="Experience opulence at its finest at the Majestic Manor. Book now for an unforgettable event!"
+          address="Majestic Manor, Malabar Hill, Mumbai, Maharashtra 400006"
+        />
+      </View>
+      <View style={styles.cardContainer}>
+        <DisplayCard
+          imageSource={require("../../assets/rectangle-65.jpg")}
+          price="₹6,900"
+          heading="Ivory Tower"
+          description="Discover a blend of modern elegance and traditional charm at the Ivory Tower."
+          address="Ivory Tower, Colaba, Mumbai, Maharashtra 400005"
+        />
+      </View>
 
       </LinearGradient>
+      
       <Footer
         uniqueIdentifier={require("../../assets/instagramfsvgrepocom-2-11.png")}
         frameViewTop={2058}

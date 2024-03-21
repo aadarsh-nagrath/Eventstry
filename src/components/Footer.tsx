@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   frameParent: {
-    top: 619,
+    top: "99%",
     backgroundColor: Color.colorAntiquewhite,
     height: 365,
   },

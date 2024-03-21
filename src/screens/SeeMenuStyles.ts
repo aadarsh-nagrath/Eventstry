@@ -125,7 +125,7 @@ const baseStyles = StyleSheet.create({
       borderStyle: "solid",
     },
     component3Position: {
-      top: 73,
+      top: 5,
       position: "absolute",
     },
     groupChildLayout: {
@@ -648,11 +648,13 @@ const baseStyles = StyleSheet.create({
       position: "absolute",
     },
     frameParent1: {
-      left: 66,
+      left: 50,
+      padding: 20,
+      paddingBottom: 100,
     },
     addACakeParent: {
       top: 1901,
-      height: 1077,
+      height: 575,
       borderColor: Color.colorGainsboro,
     },
     addAPhotographer: {
@@ -708,7 +710,7 @@ const baseStyles = StyleSheet.create({
       overflow: "hidden",
     },
     addAPhotographerParent: {
-      top: 3006,
+      top: 2500,
       height: 237,
       borderColor: Color.colorGainsboro,
     },
@@ -763,7 +765,7 @@ const baseStyles = StyleSheet.create({
       marginLeft: 406,
     },
     whatKindOfEntertainmentWouParent: {
-      top: 3271,
+      top: 2780,
       height: 375,
       borderColor: Color.colorGainsboro,
     },

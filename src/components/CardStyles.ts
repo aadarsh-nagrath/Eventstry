@@ -1,7 +1,8 @@
 import { StyleSheet } from "react-native";
 import { Border, Color, FontFamily, FontSize, Padding } from "../../GlobalStyles";
+import { Dimensions } from "react-native";
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
     groupItemLayout: {
       borderRadius: Border.br_8xs,
       position: "absolute",
@@ -134,6 +135,48 @@ const styles = StyleSheet.create({
       overflow: "hidden",
     },
   });
+
+  const { width, height } = Dimensions.get("window");
+  let styles = { ...baseStyles };
+
+  if (width >=360 && width < 415  && height <= 740) {
+    styles = StyleSheet.create({
+      ...baseStyles,
+      frameChildLayout: {
+        height: 180,
+        width: 300,
+      },
+      groupChildLayout: {
+        height: 80,
+        width: 80,
+        position: "absolute",
+      },
+      venue1: {
+        fontSize: 26,
+        fontWeight: "800",
+        color: Color.grayGray91F2730,
+        width: 300,
+      },
+      letEventstryPlan: {
+        fontSize: FontSize.size_base,
+        color: Color.grayGray91F2730,
+        marginTop: 16,
+        textAlign: "left",
+        fontFamily: FontFamily.avenir,
+        width: 300,
+      },
+      locationPin1StreamlineCorParent: {
+        justifyContent: "center",
+        flexDirection: "row",
+        marginTop: 16,
+        width: 300,
+      },
+      groupLayout: {
+        height: 48,
+        width: 300,
+      },
+    });
+  }
   
 
   export default styles;

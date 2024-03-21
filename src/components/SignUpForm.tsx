@@ -5,14 +5,22 @@ import { Color, Border, FontFamily, FontSize } from "../../GlobalStyles";
 import { Input } from "@ui-kitten/components";
 import { useState } from "react";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import { Dimensions } from "react-native";
 
 const SignUpForm = () => {
+  const { width, height } = Dimensions.get("window");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [showOTPField, setShowOTPField] = useState(false);
 
   const handleVerify = () => {
     if (isValidPhoneNumber(phoneNumber)) {
-      setShowOTPField(true);
+      if(width <= 360 && height <= 740){
+        setShowOTPField(false);
+        //Link TO OTP PAGE
+      }else{
+        setShowOTPField(true);
+      }
+      
     } else {
       alert("Please enter a valid phone number");
     }
@@ -89,7 +97,7 @@ return (
 );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   groupLayout1: {
     height: 54,
     width: 532,
@@ -214,5 +222,37 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+// Check if width is less than or equal to 360 and height is less than or equal to 740
+if (width <= 360 && height <= 740) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    rectangleParent:{
+      top: 260,
+      left: 28,
+      height: 128,
+      width: 312,
+      position: "absolute",
+    },
+    groupLayout1:{
+      position: "absolute",
+      width: 130,
+      left: 0,
+    },
+    groupLayout1: {
+      height: 54,
+      width: 310,
+      borderWidth: 1,
+      borderColor: Color.colorGainsboro,
+      borderStyle: "solid",
+      backgroundColor: Color.colorWhite,
+      borderRadius: Border.br_3xs,
+      position: "absolute",
+    },
+  });
+}
 
 export default SignUpForm;

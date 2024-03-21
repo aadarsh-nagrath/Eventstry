@@ -8,14 +8,22 @@ import { useNavigation } from "@react-navigation/native";
 
 const SignUpPage = () => {
   const navigation = useNavigation();
-  const windowWidth = Dimensions.get('window').width;
+  const { width, height } = Dimensions.get("window");
+
+  let imageS;
+  if (width <= 360 && height <= 740) {
+    imageS = require("../../assets/rectangle-456.avif");
+  } else {
+    imageS = require("../../assets/frame319.png");
+  }
+
 
   return (
     <View style={[styles.view, styles.viewLayout]}>
       <ImageBackground
         style={[styles.inner, styles.innerPosition]}
         resizeMode="cover"
-        source={require("../../assets/frame319.png")}
+        source={imageS}
       >
         <View
           style={[
@@ -55,9 +63,8 @@ const SignUpPage = () => {
             </Text>
             <Text style={styles.andClr}>{` and `}</Text>
             <Text style={[styles.termsOfService, styles.signIn1Typo]}>
-              Privacy Policy
+              Privacy Policy <span style={{color: "black"}}>.</span>
             </Text>
-            <Text style={styles.byClickingOnTypo}>.</Text>
           </Text>
         </View>
         <Text style={[styles2.alreadyAccount, styles2.containerT, {marginTop: 15}]}>
@@ -74,7 +81,7 @@ const SignUpPage = () => {
 export default SignUpPage;
 
 
-const styles2 = StyleSheet.create({
+const baseStyles2 = StyleSheet.create({
   bottonposition: {
     top: 545,
     marginLeft: 45,
@@ -106,3 +113,43 @@ const styles2 = StyleSheet.create({
     width: 500,
   },
 })
+
+
+const { width, height } = Dimensions.get("window");
+let styles2 = { ...baseStyles2 };
+
+// Check if width is less than or equal to 360 and height is less than or equal to 740
+if (width <= 360 && height <= 740) {
+  styles2 = StyleSheet.create({
+    ...baseStyles2,
+    groupLayout1:{
+      position: "absolute",
+      width: 130,
+      left: 0,
+    },
+    byClickingOnPosition: {
+      top: 500,
+      borderStyle: "solid",
+      borderColor: "#e0dcdc",
+      borderBottomWidth: 1,
+      flexDirection: "row",
+      alignItems: "center",
+      paddingBottom: "Padding.p_base",
+      width: 280,
+    },
+    bottonposition: {
+      marginTop: 80,
+      marginLeft: 45,
+    },
+    alreadyAccount: {
+      left: 30,
+      position: "relative",
+      zIndex: 40,
+    },
+    containerT: {
+      textAlign: "left",
+      position: "relative",
+      top: 500,
+    },
+  });
+}

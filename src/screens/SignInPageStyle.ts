@@ -1,7 +1,8 @@
 import { StyleSheet } from "react-native";
 import { Color, FontFamily, FontSize, Padding } from "../../GlobalStyles";
+import { Dimensions } from "react-native";
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   groupButtonText: {
     fontWeight: "800",
     fontFamily: "Avenir",
@@ -150,7 +151,92 @@ const styles = StyleSheet.create({
   fix: {
     height: "100%",
     width: "100%",
-  }
+  },
+  f: {
+    display: "flex",
+  },
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+// Check if width is less than or equal to 360 and height is less than or equal to 740
+if (width <= 360 && height <= 740) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    logo39ab30e9cd984a48cdd3b9dbbIcon: {
+      left: -40,
+    },
+    signPosition: {
+      left: 30,
+    },
+    f: {
+      top: 80,
+    },
+    unlockYourWorld: {
+      position: "absolute",
+      left: "8%",
+      top: 180,
+      width: 314,
+    },
+    forgotPassword: {
+      position: "absolute",
+      left: 230,
+      top: 415,
+    },
+    byClickingOnSignInYouAgWrapper: {
+      position: "absolute",
+      left: "10%",
+      top: 520,
+      paddingBottom: 20,
+      borderStyle: "solid",
+      borderColor: Color.colorGainsboro,
+      borderBottomWidth: 1,
+      width: 280,
+    },
+    groupItemLayout: {
+      position: "absolute",
+      left: "-5%",
+      top: 460,
+      width: 314,
+    },
+    byClickingOnTypo: {
+      display: "flex",
+      flexWrap: "wrap",
+    },
+    byClickingOnContainer: {
+      width: 314,
+      borderBottom: "1px solid #d3d3d3",
+    },
+    noAccountYetContainer: {
+      position: "absolute",
+      left: "9%",
+    },
+    containerTypo: {
+      position: "absolute",
+      top: 595,
+    },
+    andClr: {
+      fontSize: 15,
+      color: "black"
+    },
+    signIn: {
+      top: 40,
+      left: 0,
+      position: "absolute",
+      fontSize: 40
+    },
+    inner: {
+      width: 620,
+      left: 0,
+      top: 0,
+      overflow: "hidden",
+      height: "57%",
+      "-webkit-mask-image": "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))",
+      "mask-image": "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))",
+    },
+  });
+}
+
 
 export default styles;

@@ -1,14 +1,17 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import {StyleSheet ,View, Text, TouchableOpacity } from "react-native";
+import {Modal,StyleSheet ,View, Text, TouchableOpacity, ScrollView } from "react-native";
 import HeaderComponent from "../components/HeaderComponent";
 import Footer from "../components/Footer";
 import TermsAndConditions from "../components/TermsAndConditions";
 import styles from "./ExplorePageStyles";
 import { useNavigation } from "@react-navigation/native";
+import Menu from "./Menu";
+import { useState } from "react";
 
 const ExplorePage = ({ route }) => {
     const navigation = useNavigation(); 
+    const [modalVisible, setModalVisible] = useState(false);
     const { imageSource, price, heading, description, address } = route.params;
 
     const handleSeeMenuClick = () => {
@@ -20,6 +23,15 @@ const ExplorePage = ({ route }) => {
             address
         });
     };
+
+    const openModal = () => {
+        setModalVisible(true);
+      };
+    
+      // Function to close the modal
+      const closeModal = () => {
+        setModalVisible(false);
+      };
 
     return (
       <View style={styles.view}>
@@ -46,22 +58,22 @@ const ExplorePage = ({ route }) => {
                     entertainment, we handle it all, so you can relax and enjoy your
                     special day to the fullest. Let us bring your wedding dreams to life!
                 </Text>
-                <View style={styles.component3}>
-                    <TouchableOpacity onPress={handleSeeMenuClick}>
+                <TouchableOpacity onPress={openModal}>
+                <View style={styles2.seemenu}>
                         <Text style={styles.seeMenu}>See Menu</Text>
-                    </TouchableOpacity>
                         <Image
                         style={[styles.divsCardIcon, styles.iconLayout]}
                         contentFit="cover"
                         source={require("../../assets/divscardicon.png")}
                         />
                 </View>
+                </TouchableOpacity>
                 <View style={[styles.frameParent, styles.parentLayout]}>
                     <View
                     style={[styles.component3Parent, styles.component3ParentBorder]}
                     >
                     <View style={styles.component31}>
-                    <TouchableOpacity onPress={handleSeeMenuClick}>
+                    <TouchableOpacity onPress={openModal}>
                         <Text style={styles.seeMenu}>See Menu</Text>
                         </TouchableOpacity>
                         <Image
@@ -70,10 +82,12 @@ const ExplorePage = ({ route }) => {
                         source={require("../../assets/divscardicon.png")}
                         />
                     </View>
+                    <TouchableOpacity onPress={handleSeeMenuClick}>
                     <View style={[styles.rectangleGroup, styles.rectanglePosition]}>
                         <View style={[styles.rectangleView, styles.rectanglePosition]} />
                         <Text style={styles.bookNow}>Book now</Text>
                     </View>
+                    </TouchableOpacity>
                     </View>
                     <View style={[styles.venue1Wrapper, styles.parentPosition]}>
                     <Text style={[styles.venue1, styles.textTypo]}>{heading}</Text>
@@ -130,7 +144,24 @@ const ExplorePage = ({ route }) => {
                 frameViewTop={1600}
                 />
             </View>
-      </View>
+
+                  {/* Modal Component */}
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={closeModal}
+            >
+                <View style={styles2.modalContainer}>
+                <ScrollView contentContainerStyle={styles2.scrollViewContent}>
+                <View style={styles2.modalContent}>
+                    <Menu closeModal={closeModal} />
+                </View>
+                </ScrollView>
+                </View>
+            </Modal>
+            </View>
     );
   };
   
@@ -146,5 +177,38 @@ const styles2 = StyleSheet.create({
   below: {
     width: "100%",
     marginBottom: "-20%"
-  }
+  },
+  modalContainer: {
+    flex: 1,
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContent: {
+    backgroundColor: "white",
+    padding: 50,
+    paddingRight: 700,
+    paddingBottom: 2900,
+    borderRadius: 10,
+    alignItems: "center",
+    flex: 1, // Ensure it takes all available space
+  },
+  closeButton: {
+    marginTop: 20,
+    color: "blue",
+    fontWeight: "bold",
+  },
+  scrollViewContent: {
+    flexGrow: 1,
+    justifyContent: "center",
+  },
+  seemenu: {
+    top: 285,
+    flexDirection: "row",
+    alignItems: "center",
+    left: 0,
+    position: "absolute",
+  },
 });

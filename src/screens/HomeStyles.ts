@@ -1,7 +1,7 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { Color, FontFamily, Border, FontSize, Padding } from "../../GlobalStyles";
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: "center",
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
       position: "absolute",
     },
     cardContainer: {
-      padding: 30,
+      padding: 15,
     },
     content: {
       flex: 1,
@@ -219,16 +219,86 @@ const styles = StyleSheet.create({
       left: 0,
       position: "absolute",
       overflow: "hidden",
+      paddingBottom: 40, 
     },
     view: {
       height: 2420,
       overflow: "hidden",
       backgroundColor: Color.colorWhite,
-      width: 1440,
+      width: "100%",
     },
     valueFont: {
       fontFamily: FontFamily.avenir,
     }
   });
+
+
+  const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+// Check if width is less than or equal to 360 and height is less than or equal to 740
+if (width > 1410  && height <= 740) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    cardContainer: {
+      padding: 30,
+    },
+  });
+}
+
+if (width >=360 && width < 415  && height <= 740) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    findThePerfectCelebrationFParent: {
+      top: 90,
+      height: 155,
+      left: 20,
+    },
+    findThePerfect: {
+      top: 35,
+      fontSize: 26,
+      lineHeight: 30,
+      color: Color.colorDarkslateblue,
+      fontWeight: "800",
+      left: 0,
+      textAlign: "left",
+      fontFamily: FontFamily.avenir,
+    },
+    findLayout: {
+      width: 245,
+      position: "absolute",
+    },
+    frameGroup: {
+      top: 219,
+      // height: 1649,
+      display: "inline-flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      backgroundColor: "transparent",
+      left: 0,
+      position: "absolute",
+      overflow: "hidden",
+      paddingBottom: 40, 
+    },
+    cardContainer: {
+      paddingLeft: 0,
+      padding: 6,
+      marginLeft: -5,
+    },
+    groupLayout: {
+      width: "100%",
+      height:"100",
+      overflow: "scroll",
+    },
+    child: {
+      top: 61,
+      left: -241,
+      width: 749,
+      height: 749,
+      position: "absolute",
+    },
+  });
+}
+
 
 export default styles;
