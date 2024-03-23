@@ -11,7 +11,7 @@ const SignUpPage = () => {
   const { width, height } = Dimensions.get("window");
 
   let imageS;
-  if (width <= 360 && height <= 740) {
+  if (width >=360 && width < 415  && height <= 900) {
     imageS = require("../../assets/rectangle-456.avif");
   } else {
     imageS = require("../../assets/frame319.png");
@@ -119,7 +119,7 @@ const { width, height } = Dimensions.get("window");
 let styles2 = { ...baseStyles2 };
 
 // Check if width is less than or equal to 360 and height is less than or equal to 740
-if (width <= 360 && height <= 740) {
+if (width >=360 && width < 415  && height <= 900) {
   styles2 = StyleSheet.create({
     ...baseStyles2,
     groupLayout1:{

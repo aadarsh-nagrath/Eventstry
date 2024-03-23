@@ -1,15 +1,19 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import {Modal,StyleSheet ,View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {Modal,StyleSheet ,View, Text, TouchableOpacity, ScrollView, Dimensions } from "react-native";
 import HeaderComponent from "../components/HeaderComponent";
 import Footer from "../components/Footer";
 import TermsAndConditions from "../components/TermsAndConditions";
 import styles from "./ExplorePageStyles";
 import { useNavigation } from "@react-navigation/native";
+import { FontFamily, Color, Padding, FontSize, Border } from "../../GlobalStyles";
 import Menu from "./Menu";
 import { useState } from "react";
+import FlotingBookNow from "../components/FlotingBookNow";
+
 
 const ExplorePage = ({ route }) => {
+  const { width, height } = Dimensions.get("window");
     const navigation = useNavigation(); 
     const [modalVisible, setModalVisible] = useState(false);
     const { imageSource, price, heading, description, address } = route.params;
@@ -39,7 +43,7 @@ const ExplorePage = ({ route }) => {
                 <View style={styles.mainContent}>
                 <HeaderComponent />
                 <View style={styles.backParent}>
-                <Text onPress={() => navigation.navigate("Home")} style={[styles.back, styles.backTypo]}>Back</Text>
+                <Text onPress={() => navigation.navigate("Home")} style={[styles.back, styles.backTypo]}>{width >= 360 && width < 415 ? "⬅" : "Back" }</Text>
                 <Image
                     style={[styles.groupItem, styles.groupItemPosition]}
                     contentFit="cover"
@@ -68,11 +72,12 @@ const ExplorePage = ({ route }) => {
                         />
                 </View>
                 </TouchableOpacity>
+
                 <View style={[styles.frameParent, styles.parentLayout]}>
                     <View
                     style={[styles.component3Parent, styles.component3ParentBorder]}
                     >
-                    <View style={styles.component31}>
+                    <View style={[styles.component31, styles.mbfix]}>
                     <TouchableOpacity onPress={openModal}>
                         <Text style={styles.seeMenu}>See Menu</Text>
                         </TouchableOpacity>
@@ -82,7 +87,7 @@ const ExplorePage = ({ route }) => {
                         source={require("../../assets/divscardicon.png")}
                         />
                     </View>
-                    <TouchableOpacity onPress={handleSeeMenuClick}>
+                    <TouchableOpacity style={styles.mbfix} onPress={handleSeeMenuClick}>
                     <View style={[styles.rectangleGroup, styles.rectanglePosition]}>
                         <View style={[styles.rectangleView, styles.rectanglePosition]} />
                         <Text style={styles.bookNow}>Book now</Text>
@@ -118,15 +123,18 @@ const ExplorePage = ({ route }) => {
     - Easy access and parking`}</Text>
                     </View>
                 </View>
+                
+                
+
                 <View style={styles.groupContainer}>
                     <View style={[styles.frameGroup, styles.frameGroupPosition]}>
                     <View style={[styles.frameView, styles.frameGroupPosition]} />
-                    <View style={[styles.venueWrapper, styles.wrapperPosition]}>
+                    <View style={[styles.venueWrapper, styles2.wrapperPosition]}>
                         <Text style={[styles.about, styles.backTypo1]}>Venue</Text>
                     </View>
                     </View>
                     <Text
-                    style={[styles.jioWorldGarden, styles.jioWorldGardenTypo]}
+                    style={[styles.jioWorldGarden, styles2.jioWorldGardenTypo]}
                     >{address}</Text>
                     <View
                     style={[styles.getDirectionsWrapper, styles.component3ParentBorder]}
@@ -138,11 +146,26 @@ const ExplorePage = ({ route }) => {
                     <TermsAndConditions/>
                 </View>
                 </View>
-
             </View>
-                <Footer
+
+            {!(width >= 360 && width < 415) && (
+              <Footer
                 frameViewTop={1600}
+              />
+            )}    
+            {(width >= 360 && width < 415) && (
+              <View >
+                <FlotingBookNow 
+                  imageSource={imageSource}
+                  price={price}
+                  heading={heading}
+                  description={description}
+                  address={address}
+                  frameViewTop={850}
                 />
+              </View>
+            )}
+
             </View>
 
                   {/* Modal Component */}
@@ -168,7 +191,7 @@ const ExplorePage = ({ route }) => {
 
 export default ExplorePage;
 
-const styles2 = StyleSheet.create({
+const baseStyles2 = StyleSheet.create({
   alignfix: {
     width: "100%",
     display: "flex",
@@ -211,4 +234,48 @@ const styles2 = StyleSheet.create({
     left: 0,
     position: "absolute",
   },
+  jioWorldGardenTypo: {
+    lineHeight: 24,
+    width: 750,
+    color: Color.grayGray91F2730,
+    textAlign: "left",
+    fontFamily: FontFamily.avenir,
+    fontSize: FontSize.size_base,
+    left: 0,
+    position: "absolute",
+  },
+  wrapperPosition:{
+      paddingBottom: Padding.p_base,
+      paddingTop: Padding.p_9xl,
+      flexDirection: "row",
+      borderBottomWidth: 1,
+      alignItems: "center",
+      width: 750,
+      borderColor: Color.colorGainsboro,
+      borderStyle: "solid",
+      left: 0,
+      position: "absolute",
+  },
 });
+
+
+const { width, height } = Dimensions.get("window");
+let styles2 = { ...baseStyles2 };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles2 = StyleSheet.create({
+    ...baseStyles2,
+    seemenu: {
+      top: 490,
+    },
+    wrapperPosition:{
+      top: 30,
+      width: 330,
+    },
+    jioWorldGardenTypo:{
+      position: "absolute",
+      width: 300,
+      top: 85,
+    },
+  });
+}

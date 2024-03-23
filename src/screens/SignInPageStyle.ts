@@ -161,7 +161,7 @@ const { width, height } = Dimensions.get("window");
 let styles = { ...baseStyles };
 
 // Check if width is less than or equal to 360 and height is less than or equal to 740
-if (width <= 360 && height <= 740) {
+if (width >=360 && width < 415  && height <= 900) {
   styles = StyleSheet.create({
     ...baseStyles,
     logo39ab30e9cd984a48cdd3b9dbbIcon: {

@@ -11,7 +11,7 @@ const SignInPage = () => {
   const { width, height } = Dimensions.get("window");
 
   let imageS;
-  if (width <= 360 && height <= 740) {
+  if (width >=360 && width < 415  && height <= 900) {
     imageS = require("../../assets/rectangle-123.avif");
   } else {
     imageS = require("../../assets/frame3191.png");

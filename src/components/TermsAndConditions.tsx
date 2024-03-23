@@ -1,11 +1,11 @@
 import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
 import { Color, FontFamily, FontSize, Padding } from "../../GlobalStyles";
 
 const TermsAndConditions = () => {
   return (
-    <View style={styles.groupParent}>
-      <View style={[styles.frameParent, styles.frameParentPosition]}>
+    <View style={[styles.groupParent]}>
+      <View style={[styles.frameParent, styles.frameParentPosition ]}>
         <View style={[styles.groupChild, styles.groupChildPosition]} />
         <View
           style={[styles.termsConditionsWrapper, styles.groupChildPosition]}
@@ -16,23 +16,41 @@ const TermsAndConditions = () => {
           </Text>
         </View>
       </View>
-      <Text
-        style={[styles.pleaseCarryA, styles.frameParentPosition]}
-      >{`Please carry a valid ID proof along with you.
-No refunds on purchased ticket are possible, even in case of any rescheduling.
-Security procedures, including frisking remain the right of the management.
-No dangerous or potentially hazardous objects including but not limited to weapons, knives, guns, fireworks, helmets, lazer devices, bottles, musical instruments will be allowed in the venue and may be ejected with or without the owner from the venue.
-The sponsors/performers/organizers are not responsible for any injury or damage occurring due to the event. Any claims regarding the same would be settled in courts in Mumbai.
-People in an inebriated state may not be allowed entry.
-Organizers hold the right to deny late entry to the event.
-Venue rules apply.`}</Text>
+      <Text style={[styles.pleaseCarryA, styles.frameParentPosition]}>
+        <ul style={{ paddingLeft: 20 }}>
+          <li>Please carry a valid ID proof along with you.</li>
+          <li>
+            No refunds on purchased tickets are possible, even in case of any
+            rescheduling.
+          </li>
+          <li>
+            Security procedures, including frisking, remain the right of the
+            management.
+          </li>
+          <li>
+            No dangerous or potentially hazardous objects, including but not
+            limited to weapons, knives, guns, fireworks, helmets, laser devices,
+            bottles, musical instruments, will be allowed in the venue and may
+            result in ejection from the venue, with or without the owner.
+          </li>
+          <li>
+            The sponsors, performers, and organizers are not responsible for any
+            injury or damage occurring due to the event. Any claims regarding
+            the same would be settled in courts in Mumbai.
+          </li>
+          <li>People in an inebriated state may not be allowed entry.</li>
+          <li>Organizers hold the right to deny late entry to the event.</li>
+          <li>Venue rules apply.</li>
+        </ul>
+      </Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   frameParentPosition: {
     left: "0%",
+    marginTop: -20,
     width: "100%",
     position: "absolute",
   },
@@ -102,4 +120,28 @@ const styles = StyleSheet.create({
   },
 });
 
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    groupParent: {
+      top: 235,
+      left: 0,
+      width: 330,
+      height: 520,
+      position: "absolute",
+      backgroundColor: "#fef9f6",
+    },
+    pleaseCarryA: {
+      top: 80,
+      backgroundColor: "transparent"
+    },
+    frameParent: {
+      backgroundColor: "transparent",
+    }
+  });
+}
 export default TermsAndConditions;

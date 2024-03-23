@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { Image } from "expo-image";
 import MenuItem from "../components/MenuItem";
 import { Border, Color } from "../../GlobalStyles";
+import { Dimensions } from "react-native";
 
 const Menu = ({closeModal}) => {
   return (
@@ -61,7 +62,7 @@ const Menu = ({closeModal}) => {
   );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   menuItemPosition: {
     top: 88,
     position: "absolute",
@@ -92,5 +93,20 @@ const styles = StyleSheet.create({
     height: 2906,
   },
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    menu: {
+      backgroundColor: Color.colorWhite,
+      flex: 1,
+      width: 200,
+      height: 2906,
+    },
+  });
+}
 
 export default Menu;

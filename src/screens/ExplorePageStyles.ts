@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import { FontFamily, Color, Padding, FontSize, Border } from "../../GlobalStyles";
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
     logo39ab30e9cd984a48cdd3b9dbbLayout: {
       height: 42,
       width: 166,
@@ -158,6 +158,9 @@ const styles = StyleSheet.create({
       left: 0,
       overflow: "hidden",
     },
+    mbfix:{
+      display: "flex",
+    },
     groupInner: {
       width: 69,
       alignItems: "center",
@@ -283,6 +286,7 @@ const styles = StyleSheet.create({
       marginTop: 8,
       width: 388,
       fontSize: FontSize.size_base,
+      overflow: "hidden",
     },
     thingsToKeepInMindParent: {
       top: 144,
@@ -350,5 +354,85 @@ const styles = StyleSheet.create({
     },
   })
   
+  const { width, height } = Dimensions.get("window");
+  let styles = { ...baseStyles };
+  
+  if (width >=360 && width < 415  && height <= 900) {
+    styles = StyleSheet.create({
+      ...baseStyles,
+      mbfix: {
+        display: "none",
+      },
+      component3Parent: {
+        backgroundColor: Color.colorSnow,
+        borderColor: Color.colorPeachpuff,
+        height: 250,
+        width: 320,
+        borderRadius: Border.br_3xs,
+        top: 0,
+        overflow: "hidden",
+      },
+      parentLayout: {
+        height: 250,
+        width: 320,
+        overflow: "hidden",
+      },
+      frameParent: {
+        left: 6,
+        top: 176,
+        position: "absolute",
+      },
+      backParent: {
+        top: 80,
+        left: 15,
+        width: 336,
+        height: 1499,
+        position: "absolute",
+      },
+      groupItem: {
+        height: 200,
+        width: 330,
+        left: 0,
+      },
+      wrapperPosition:{
+        top: 250,
+        width: 330,
+      },
+      jioWorldGardenTypo:{
+        position: "absolute",
+        width: 330,
+        top: 510,
+      },
+      frameChild: {
+        width: 40,
+        height: 40,
+        marginLeft: 164,
+      },
+      //font
+      textTypo: {
+        fontSize: 25,
+        fontWeight: "500",
+      },
+      groupContainer:{
+        width:330,
+        top: 500,
+      },
+      divsCardIcon: {
+        width: 100,
+        top:-20,
+        marginLeft: 70,
+      },
+      jioWorldGarden: {
+        position: "absolute",
+        top: 30,
+      },
+      frameGroup:{
+        width: 330,
+      },
+      seemenu:{
+        width: 100,
+      },
+    });
+  }
 export default styles;
   

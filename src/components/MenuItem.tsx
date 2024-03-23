@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
 import { FontFamily, Border, Color, FontSize } from "../../GlobalStyles";
 
 export type MenuItemType = {
@@ -47,7 +47,7 @@ Chicken Sheekh Kebabs`}</Text>
   );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   chickenTypo: {
     textAlign: "left",
     fontFamily: FontFamily.avenir,
@@ -97,5 +97,29 @@ const styles = StyleSheet.create({
     width: 660,
   },
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    rectangleParent: {
+      height: 230,
+      width: 360,
+    },
+    groupChild: {
+      top: 0,
+      left: 0,
+      borderRadius: Border.br_3xs,
+      borderStyle: "solid",
+      borderColor: Color.colorGainsboro,
+      borderWidth: 1,
+      position: "absolute",
+      height: 230,
+      width: 660,
+    },
+  });
+}
 
 export default MenuItem;

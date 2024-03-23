@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import {Modal, ScrollView, StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import {Modal, ScrollView, StyleSheet, View, Text, TouchableOpacity, Dimensions } from "react-native";
 import IntimateDecorationContainer from "../components/IntimateDecorationC";
 import ProductCardContainer from "../components/ProductCardContainer";
 import styles from "./SeeMenuStyles";
@@ -29,6 +29,15 @@ const SeeMenu = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [counter, setCounter] = React.useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const originalImgSrc = require("../../assets/ellipse-1696.png");
+  const newImgSrc = require("../../assets/ellipse-1697.png");
+  const { width, height } = Dimensions.get("window");
+
+  const handleScroll = (event) => {
+    const currentPosition = event.nativeEvent.contentOffset.y;
+    setScrollPosition(currentPosition);
+  };
 
   const handleInceDecr = (action) => {
     if (action === 'increment' && counter < 25) {
@@ -57,10 +66,11 @@ const SeeMenu = () => {
 
   return (
     <View style={styles.view}>
-      <View style={[styles.res, {zIndex: 2}]}>
-        <HeaderComponent/>
+      <View style={[styles.res, {zIndex: 1}]}>
+      {scrollPosition <= 50 && !(width >= 360 && width < 415) && <HeaderComponent />}
       </View>
       {/* <View style={styles.fcompo} />; */}
+
       <View style={[styles.inner]}>
         <View style={[styles.vectorParent]}>
           <Image
@@ -80,17 +90,18 @@ const SeeMenu = () => {
           />
           <View style={[styles.ellipseParent, styles.groupChildLayout1]}>
             <Image
+              id="header-img"
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
-              source={require("../../assets/ellipse-1696.png")}
+              source={scrollPosition > 350 ? newImgSrc : originalImgSrc}
             />
-            <Text style={[styles.text, styles.textTypo]}>1</Text>
+            <Text style={[styles.text1, styles.textTypo]}>1</Text>
           </View>
           <View style={[styles.ellipseGroup, styles.groupChildLayout1]}>
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
-              source={require("../../assets/ellipse-1697.png")}
+              source={scrollPosition > 350 && scrollPosition < 960 ? originalImgSrc : newImgSrc}
             />
             <Text style={[styles.text1, styles.textTypo]}>2</Text>
           </View>
@@ -98,7 +109,7 @@ const SeeMenu = () => {
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
-              source={require("../../assets/ellipse-1697.png")}
+              source={scrollPosition > 960 && scrollPosition < 1760 ? originalImgSrc : newImgSrc}
             />
             <Text style={[styles.text1, styles.textTypo]}>3</Text>
           </View>
@@ -106,7 +117,7 @@ const SeeMenu = () => {
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
-              source={require("../../assets/ellipse-1697.png")}
+              source={scrollPosition > 1760 && scrollPosition < 2260 ? originalImgSrc : newImgSrc}
             />
             <Text style={[styles.text1, styles.textTypo]}>4</Text>
           </View>
@@ -119,7 +130,7 @@ const SeeMenu = () => {
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
-              source={require("../../assets/ellipse-1697.png")}
+              source={scrollPosition > 2260 && scrollPosition < 2460 ? originalImgSrc : newImgSrc}
             />
             <Text style={[styles.text1, styles.textTypo]}>5</Text>
           </View>
@@ -132,7 +143,7 @@ const SeeMenu = () => {
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
-              source={require("../../assets/ellipse-1697.png")}
+              source={scrollPosition > 2460 ? originalImgSrc : newImgSrc}
             />
             <Text style={[styles.text1, styles.textTypo]}>6</Text>
           </View>
@@ -140,7 +151,7 @@ const SeeMenu = () => {
       </View>
 
       {/* Select Event Component */}
-
+      <ScrollView onScroll={handleScroll} scrollEventThrottle={16}>
       <View
         style={[
           styles.pleaseSelectTheEventDateParent,
@@ -430,7 +441,7 @@ const SeeMenu = () => {
       </Modal>
 
 
-
+      </ScrollView>
     </View>
   );
 };

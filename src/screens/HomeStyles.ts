@@ -246,7 +246,7 @@ if (width > 1410  && height <= 740) {
   });
 }
 
-if (width >=360 && width < 415  && height <= 740) {
+if (width >=360 && width < 415  && height <= 900) {
   styles = StyleSheet.create({
     ...baseStyles,
     findThePerfectCelebrationFParent: {
