@@ -19,7 +19,10 @@ const baseStyles = StyleSheet.create({
     groupLayout2: {
       height: 62,
       width: 530,
-      left: "50%",
+      position: "absolute", 
+      left:300, 
+      top: 3200, 
+      bottom: 30
     },
     groupPosition: {
       backgroundColor: Color.colorDarkslateblue,
@@ -90,6 +93,11 @@ const baseStyles = StyleSheet.create({
       height: 40,
       position: "absolute",
     },
+    parentP: {
+      top: 164,
+      height: 40,
+      position: "absolute",
+    },
     wrapperFlexBox: {
       justifyContent: "center",
       alignItems: "center",
@@ -97,6 +105,13 @@ const baseStyles = StyleSheet.create({
       position: "absolute",
     },
     groupLayout1: {
+      padding: Padding.p_base,
+      width: 617,
+      borderWidth: 1,
+      borderRadius: Border.br_3xs,
+      borderStyle: "solid",
+    },
+    mbl: {
       padding: Padding.p_base,
       width: 617,
       borderWidth: 1,
@@ -454,6 +469,7 @@ const baseStyles = StyleSheet.create({
       borderStyle: "solid",
       left: 515,
     },
+    
     pleaseSelectTheEventDateParent: {
       height: 233,
       borderColor: Color.colorDarkslateblue,
@@ -505,6 +521,15 @@ const baseStyles = StyleSheet.create({
       top: 121,
       left: 67,
       position: "absolute",
+    },
+    fd:{
+      marginTop: 30
+    },
+    yup: {
+      flex:1, 
+      top: 100, 
+      marginTop: -40, 
+      paddingTop:0
     },
     seeMenu: {
       textDecoration: "underline",
@@ -652,6 +677,9 @@ const baseStyles = StyleSheet.create({
       padding: 20,
       paddingBottom: 100,
     },
+    pf:{
+      marginTop: 2,
+    },
     addACakeParent: {
       top: 1901,
       height: 575,
@@ -787,17 +815,267 @@ const baseStyles = StyleSheet.create({
   if (width >=360 && width < 415  && height <= 900) {
     styles = StyleSheet.create({
       ...baseStyles,
-      inner: {
-        ...baseStyles.inner,
-        position: "absolute",
-      },
       res: {
         display: "none",
       },
      groupChild13Border: {
       display: "none",
      },
-
+     inner: {
+      width: 120,
+      height: 499,
+      top: 10,
+      left: 100,
+      position: "fixed",
+      overflow: "hidden",
+      transform: [{rotate: '-90deg'}],
+      marginTop: -200,
+      backgroundColor: "green",
+      zIndex: 2,
+    },
+    vectorParent: {
+      top: 30,
+      left: 25,
+      height: 440,
+      width: 40,
+      position: "absolute",
+      backgroundColor: "red",
+    },
+    text1: {
+      left: 14,
+      top: 6,
+      fontWeight: "900",
+      fontSize: FontSize.size_xl,
+      textAlign: "left",
+      color: Color.colorGray_200,
+      transform: [{rotate: '90deg'}],
+    },
+    addParentShadowBox: {
+      width: 330,
+      shadowOpacity: 1,
+      elevation: 24,
+      shadowRadius: 24,
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowColor: "rgba(0, 0, 0, 0.08)",
+      left: 14,
+      borderWidth: 1,
+      borderRadius: Border.br_3xs,
+      borderStyle: "solid",
+      position: "absolute",
+      overflow: "hidden",
+      backgroundColor: Color.colorWhite,
+    },
+    groupContainer: {
+      top: 70,
+      right: 140,
+    },
+    frameViewPosition: {
+      paddingBottom: Padding.p_5xs,
+      paddingRight: Padding.p_5xs,
+      paddingTop: Padding.p_5xs,
+      paddingLeft: Padding.p_base,
+      height: 51,
+      width: 345,
+      alignItems: "center",
+      flexDirection: "row",
+      borderWidth: 0.8,
+      borderColor: Color.colorGray_200,
+      borderRadius: Border.br_8xs,
+      left: 20,
+      borderStyle: "solid",
+      position: "absolute",
+      overflow: "hidden",
+    },
+    pleaseSelectTheEventDateParent: {
+      height: 433,
+      borderColor: Color.colorDarkslateblue,
+      top: 126,
+    },
+    frameView: {
+      top: 166,
+    },
+    pleaseSelectAContainer: {
+      top: 134,
+      fontFamily: FontFamily.avenir,
+      fontWeight: "500",
+      left: 24,
+      fontSize: FontSize.size_lg,
+      position: "absolute",
+    },
+    pleaseEnterTheContainer: {
+      top: 235,
+      fontFamily: FontFamily.avenir,
+      fontWeight: "500",
+      left: 24,
+      fontSize: FontSize.size_lg,
+      position: "absolute",
+    },
+    frameParent: {
+      width: 142,
+      top: 304,
+      left: 80,
+    },
+    parentPosition: {
+      top: 284,
+      height: 40,
+      position: "absolute",
+    },
+    informationCircleStreamlineParent: {
+      borderLeftWidth: 1,
+      paddingHorizontal: Padding.p_5xs,
+      paddingVertical: 0,
+      flexDirection: "row",
+      top:394,
+      borderColor: Color.colorGray_200,
+      borderStyle: "solid",
+      left: 20,
+    },
+    maximum25People: {
+      lineHeight: 20,
+      width: 250,
+      marginLeft: 8,
+    },
+    yup: {
+      flex:1, 
+      top: 100, 
+      marginTop: -80, 
+      paddingTop:0
+    },
+    parentP: {
+      top: 364,
+      height: 40,
+      position: "absolute",
+    },
+    pleaseSelectOneOfThePackaParent: {
+      top: 577,
+      height: 691,
+      borderColor: Color.colorGainsboro,
+    },
+    component3: {
+      left: 90,
+      alignItems: "center",
+      flexDirection: "row",
+    },
+    component3Position: {
+      top: 55,
+      position: "absolute",
+    },
+    whatKindOfDecorationWouldParent: {
+      top: 1296,
+      height: 837,
+      borderColor: Color.colorGainsboro,
+    },
+    frameGroup: {
+      top: 81,
+      left: 14,
+      position: "absolute",
+    },
+    groupParent1: {
+      width: 585,
+      height: 100,
+    },
+    pleaseContainerTypo: {
+      fontFamily: FontFamily.avenir,
+      fontWeight: "500",
+      fontSize: 16
+    },
+    proceedToPayment: {
+      marginLeft: -95,
+      top: "29.03%",
+      color: Color.colorWhite,
+      fontSize: FontSize.size_xl,
+      fontWeight: "800",
+      left: "60%",
+      textAlign: "left",
+      position: "absolute",
+    },
+    nonVegStartersContainer: {
+      fontSize: FontSize.size_lg,
+      textAlign: "left",
+      width: "50%",
+    },
+    groupLayout: {
+      marginTop: 16,
+      padding: Padding.p_base,
+      width: 300,
+      borderWidth: 1,
+      borderRadius: Border.br_3xs,
+      borderStyle: "solid",
+    },
+    whatKindOf: {
+      marginLeft: -165,
+      top: 24,
+      color: Color.grayGray91F2730,
+      left: "55%",
+      fontSize: FontSize.size_lg,
+      fontFamily: FontFamily.avenir,
+      fontWeight: "500",
+      position: "absolute",
+    },
+    addACakeParent: {
+      top: 2151,
+      height: 575,
+      borderColor: Color.colorGainsboro,
+    },
+    addAPhotographerParent: {
+      top: 2750,
+      height: 237,
+      borderColor: Color.colorGainsboro,
+    },
+    frameParent1: {
+      left: 0,
+      padding: 20,
+      paddingBottom: 100,
+    },
+    whatKindOfEntertainmentWouParent: {
+      top: 3020,
+      height: 375,
+      borderColor: Color.colorGainsboro,
+    },
+    fd:{
+      marginTop: -3
+    },
+    pf:{
+      marginTop: -50,
+    },
+    whatKindOf1: {
+      marginLeft: -158,
+      top: 24,
+      color: Color.grayGray91F2730,
+      left: "50%",
+      fontSize: 16,
+      fontFamily: FontFamily.avenir,
+      fontWeight: "500",
+      position: "absolute",
+    },
+    mbl: {
+      padding: Padding.p_base,
+      width: 300,
+      borderWidth: 1,
+      borderRadius: Border.br_3xs,
+      borderStyle: "solid",
+    },
+    view: {
+      flex: 1,
+      height: 4521,
+      width: "100%",
+      backgroundColor: Color.colorWhite,
+    },
+    groupLayout2: {
+      height: 62,
+      width: 280,
+      left:20, 
+      position: "absolute", 
+      top: 3420, 
+      bottom: 30
+    },
+    groupItem: {
+      height: 62,
+      width: 325,
+    },
     });
   }
   

@@ -100,10 +100,17 @@ let styles = { ...baseStyles };
 if (width >=360 && width < 415  && height <= 900) {
   styles = StyleSheet.create({
     ...baseStyles,
+    menuChild: {
+      top: 24,
+      left: 470,
+      width: 40,
+      height: 40,
+      position: "absolute",
+    },
     menu: {
-      backgroundColor: Color.colorWhite,
+      backgroundColor: "Color.colorWhite",
       flex: 1,
-      width: 200,
+      width: "100%",
       height: 2906,
     },
   });

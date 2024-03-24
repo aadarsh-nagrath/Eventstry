@@ -8,9 +8,15 @@ const baseStyles = StyleSheet.create({
       width: "100%",
       height: "100%",
     },
-    groupLayout: {
+    view: {
+      height: 2420,
+      backgroundColor: Color.colorWhite,
       width: "100%",
-      overflow: "hidden",
+      // overflow: "hidden",
+    },
+    groupLayout: {
+      height: "100%",
+      // overflow: "hidden",
     },
     frameBorder: {
       borderWidth: 1,
@@ -82,6 +88,7 @@ const baseStyles = StyleSheet.create({
       left: 708,
       flexDirection: "row",
       position: "absolute",
+      display: "flex",
     },
     cardContainer: {
       padding: 15,
@@ -221,15 +228,9 @@ const baseStyles = StyleSheet.create({
       overflow: "hidden",
       paddingBottom: 40, 
     },
-    view: {
-      height: 2420,
-      overflow: "hidden",
-      backgroundColor: Color.colorWhite,
-      width: "100%",
-    },
     valueFont: {
       fontFamily: FontFamily.avenir,
-    }
+    },
   });
 
 
@@ -285,17 +286,15 @@ if (width >=360 && width < 415  && height <= 900) {
       padding: 6,
       marginLeft: -5,
     },
-    groupLayout: {
-      width: "100%",
-      height:"100",
-      overflow: "scroll",
-    },
     child: {
       top: 61,
       left: -241,
       width: 749,
       height: 749,
       position: "absolute",
+    },
+    frameParent:{
+      display: "none"
     },
   });
 }

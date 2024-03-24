@@ -52,7 +52,7 @@ const Footer = ({
 
 const styles = StyleSheet.create({
   framePosition: {
-    width: "100%",
+    width: "98%",
     overflow: "hidden",
     left: 10,
     position: "absolute",

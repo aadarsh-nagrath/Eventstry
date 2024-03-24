@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Image } from "expo-image";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Color, FontFamily, FontSize, Border, Padding } from "../../GlobalStyles";
 
 
@@ -75,7 +75,7 @@ const IntimateDecorationC = ({
   );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   frameBorder: {
     borderColor: Color.colorGray_200,
     borderStyle: "solid",
@@ -178,5 +178,45 @@ const styles2 = StyleSheet.create({
     backgroundColor: "#01235b",
   },
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    frameParent: {
+      top: 73,
+      left: 15,
+      borderRadius: Border.br_3xs,
+      borderWidth: 1,
+      width: 305,
+      flexDirection: "row",
+      alignItems: "center",
+      padding: Padding.p_base,
+      overflow: "hidden",
+      position: "absolute",
+    },
+    frameChild: {
+      borderRadius: 8,
+      width: 134,
+      height: 164,
+      marginLeft: -5,
+      overflow: "hidden",
+    },
+    intimateOurIntimateDecoratiWrapper: {
+      width: 155,
+      height: 181,
+      marginLeft: 10,
+    },
+    ourIntimateDecorations: {
+      fontWeight: "500",
+      color: Color.grayGray91F2730,
+      fontFamily: FontFamily.avenir,
+      fontSize: 13
+    },
+  });
+}
+
 
 export default IntimateDecorationC;

@@ -12,6 +12,7 @@ import { useState } from "react";
 import EntertainmentCompo from "../components/EntertainmentCompo";
 import { useRoute } from "@react-navigation/native";
 import Menu from "./Menu";
+import FlotingBookNow from "../components/FlotingBookNow";
 
 
 const RectangleRadioButton = ({ selected, onSelect }) => {
@@ -69,7 +70,6 @@ const SeeMenu = () => {
       <View style={[styles.res, {zIndex: 1}]}>
       {scrollPosition <= 50 && !(width >= 360 && width < 415) && <HeaderComponent />}
       </View>
-      {/* <View style={styles.fcompo} />; */}
 
       <View style={[styles.inner]}>
         <View style={[styles.vectorParent]}>
@@ -149,9 +149,9 @@ const SeeMenu = () => {
           </View>
         </View>
       </View>
-
       {/* Select Event Component */}
       <ScrollView onScroll={handleScroll} scrollEventThrottle={16}>
+      
       <View
         style={[
           styles.pleaseSelectTheEventDateParent,
@@ -227,7 +227,7 @@ const SeeMenu = () => {
         <View
           style={[
             styles.informationCircleStreamlineParent,
-            styles.parentPosition,
+            styles.parentP,
           ]}
         >
           <Image
@@ -345,7 +345,7 @@ const SeeMenu = () => {
         <Text style={[styles.addACake, styles.addContainerTypo]}>
           Add a Cake
         </Text>
-        <View style={{flex:1, top: 100, marginTop: -40, paddingTop:0}}>
+        <View style={styles.yup}>
         <ScrollView>
         <View style={[styles.frameParent1, styles.component3Position]}>
           <ProductCardContainer />
@@ -366,8 +366,8 @@ const SeeMenu = () => {
         <Text style={[styles.addAPhotographer, styles.addContainerTypo]}>
           Add a Photographer
         </Text>
-        <View style={[styles.frameParent1, styles.component3Position]}>
-          <View style={[styles.groupParent6, styles.groupLayout1]}>
+        <View style={[styles.fd,styles.frameParent1, styles.component3Position]}>
+          <View style={[styles.groupParent6, styles.groupLayout]}>
             <View style={styles.yesWrapper}>
               <Text style={[styles.yes, styles.containerPosition]}>Yes</Text>
             </View>
@@ -395,7 +395,7 @@ const SeeMenu = () => {
         </Text>
         <View style={{flex:1, top: 100, marginTop: -40, paddingTop:0, overflow: "scroll"}}>
         {/* <ScrollView> */}
-        <View style={[styles.frameParent1, styles.component3Position]}>
+        <View style={[styles.pf,styles.frameParent1, styles.component3Position]}>
           <EntertainmentCompo itemName="Live Music" price="₹8,900/-" />
           <br/>
           <EntertainmentCompo itemName="Magician" price="₹8,900/-" />
@@ -414,14 +414,13 @@ const SeeMenu = () => {
         </View>
       </View>
 
-      <View style={[styles.groupLayout2,{left:370, width: 350, position: "absolute", top: 3200, bottom: 30}]}>
+      <View style={[styles.groupLayout2]}>
         <View style={[styles.groupItem, styles.groupPosition]} />
         <Text style={[styles.proceedToPayment, styles.textTypo2]}>
           Proceed to Payment
         </Text>
       </View>
-
-      <View style={{height:250}} />
+      
 
       {/* Modal Component */}
 
@@ -439,10 +438,9 @@ const SeeMenu = () => {
           </ScrollView>
         </View>
       </Modal>
-
-
+      
       </ScrollView>
-    </View>
+      </View>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { Color, FontSize, FontFamily, Border, Padding } from "../../GlobalStyles";
 
@@ -59,7 +59,7 @@ const ProductCardContainer = ({ propMarginTop }: ProductCardContainerType) => {
   );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   vanilla05kg: {
     color: Color.grayGray91F2730,
   },
@@ -167,4 +167,35 @@ const styles2 = StyleSheet.create({
     backgroundColor: "#01235b",
   },
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+// Check if width is less than or equal to 360 and height is less than or equal to 740
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    groupParent: {
+      borderRadius: Border.br_3xs,
+      backgroundColor: Color.colorWhite,
+      borderColor: Color.colorGainsboro,
+      borderWidth: 1,
+      width: 300,
+      height: 150,
+      flexDirection: "row",
+      alignItems: "center",
+      paddingHorizontal: Padding.p_base,
+      paddingVertical: Padding.p_xs,
+      overflow: "hidden",
+      borderStyle: "solid",
+    },
+    image18Icon: {
+      bottom: 25,
+      left: 9,
+      width: 107,
+      height: 350,
+      position: "absolute",
+    },
+  });
+}
 export default ProductCardContainer;

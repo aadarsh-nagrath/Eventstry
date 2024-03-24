@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable, Dimensions } from "react-native";
+import { Text, StyleSheet, View, Pressable, Dimensions, ScrollView } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import DisplayCard from "../components/DisplayCard";
@@ -106,7 +106,7 @@ const Home = () => {
 
       
       <LinearGradient
-        style={[styles.frameGroup, styles.groupLayout, {marginBottom: 50}]}
+        style={[styles.frameGroup, styles.groupL, {marginBottom: 50}]}
         locations={[0, 0.81]}
         colors={["#f4e9e3", "rgba(255, 255, 255, 0)"]}
       >
@@ -198,7 +198,8 @@ const Home = () => {
         uniqueIdentifier={require("../../assets/instagramfsvgrepocom-2-11.png")}
         frameViewTop={2058}
       />
-    </View>
+      
+      </View>
     </View>
   );
 };

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.e399bb8d.js",
-    "static/js/826.bade857b.js": "/static/js/826.bade857b.js",
+    "main.js": "/static/js/main.0b3c56e7.js",
+    "static/js/826.0f2295c2.js": "/static/js/826.0f2295c2.js",
     "static/media/ellipse-3.png": "/static/media/ellipse-3.4cd9040d7c180dd2536a.png",
     "static/media/frame319.png": "/static/media/frame319.773155317c771c0ef07c.png",
     "static/media/frame3191.png": "/static/media/frame3191.c226cca21be681271871.png",
@@ -12,6 +12,8 @@
     "static/media/rectangle-65.jpg": "/static/media/rectangle-65.1ccaf91fc977c76426b7.jpg",
     "static/media/rectangle-66.jpg": "/static/media/rectangle-66.4bd16cc7d2f0fc95806c.jpg",
     "static/media/image-18.png": "/static/media/image-18.e57036dd4fc0935d9f16.png",
+    "static/media/rectangle-456.avif": "/static/media/rectangle-456.2db93284cdd96a2eddc3.avif",
+    "static/media/rectangle-123.avif": "/static/media/rectangle-123.012cf065dc60c9a2a1cc.avif",
     "static/media/plus.png": "/static/media/plus.f426e7650b0baec6f85d.png",
     "static/media/logo-1.png": "/static/media/logo39ab30e9cd984a48cdd3b9dbbbc80549-1.27d7567f47a29d30b1c2.png",
     "static/media/group-240.png": "/static/media/group-240.e7f4aade5273da6c1d06.png",
@@ -40,11 +42,11 @@
     "favicon-16.png": "/favicon-16.png",
     "serve.json": "/serve.json",
     "manifest.json": "/manifest.json",
-    "main.e399bb8d.js.map": "/static/js/main.e399bb8d.js.map",
-    "826.bade857b.js.map": "/static/js/826.bade857b.js.map"
+    "main.0b3c56e7.js.map": "/static/js/main.0b3c56e7.js.map",
+    "826.0f2295c2.js.map": "/static/js/826.0f2295c2.js.map"
   },
   "entrypoints": [
-    "static/js/826.bade857b.js",
-    "static/js/main.e399bb8d.js"
+    "static/js/826.0f2295c2.js",
+    "static/js/main.0b3c56e7.js"
   ]
 }

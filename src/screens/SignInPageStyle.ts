@@ -206,7 +206,6 @@ if (width >=360 && width < 415  && height <= 900) {
     },
     byClickingOnContainer: {
       width: 314,
-      borderBottom: "1px solid #d3d3d3",
     },
     noAccountYetContainer: {
       position: "absolute",

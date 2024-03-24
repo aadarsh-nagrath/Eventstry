@@ -104,10 +104,6 @@ let styles = { ...baseStyles };
 if (width >=360 && width < 415  && height <= 900) {
   styles = StyleSheet.create({
     ...baseStyles,
-    rectangleParent: {
-      height: 230,
-      width: 360,
-    },
     groupChild: {
       top: 0,
       left: 0,
@@ -116,8 +112,42 @@ if (width >=360 && width < 415  && height <= 900) {
       borderColor: Color.colorGainsboro,
       borderWidth: 1,
       position: "absolute",
-      height: 230,
-      width: 660,
+      height: 160,
+      width: 330,
+      marginLeft: 10
+    },
+    rectangleParent: {
+      height: 160,
+      width: 330,
+      marginLeft: 150,
+    },
+    chickenTandooriChicken: {
+      left: "7.24%",
+      color: Color.grayGray91F2730,
+      fontWeight: "500",
+      fontSize: 13,
+      top: "39.48%",
+      textAlign: "left",
+      fontFamily: FontFamily.avenir,
+    },
+    startersNonVeg: {
+      marginLeft: -132,
+      top: 28,
+      left: "50%",
+      fontSize: 20,
+      fontWeight: "800",
+      color: Color.colorDarkslateblue,
+      textAlign: "left",
+      fontFamily: FontFamily.avenir,
+    },
+    afghaniChickenChicken: {
+      left: "56.33%",
+      color: Color.grayGray91F2730,
+      fontWeight: "500",
+      fontSize: 13,
+      top: "39.48%",
+      textAlign: "left",
+      fontFamily: FontFamily.avenir,
     },
   });
 }

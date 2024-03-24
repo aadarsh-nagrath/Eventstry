@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   logo39ab30e9cd984a48cdd3b9dbbWrapper: {
     top: 19,
     left: 70,
@@ -23,9 +23,23 @@ const styles = StyleSheet.create({
   },
   logo39ab30e9cd984a48cdd3b9dbbIcon: {
     top: 0,
-    left: -45,
+    left: 8,
     overflow: "hidden",
   },
 });
+
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    groupLayout: {
+      width: 365,
+      overflow: "hidden",
+    },
+  });
+}
 
 export default styles;

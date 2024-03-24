@@ -22,7 +22,7 @@ const EntertainmentCompo = (props) => {
   };  
 
   return (
-    <View style={[styles.groupParent6, styles.groupLayout1]}>
+    <View style={[styles.groupParent6, styles.mbl]}>
       <View style={styles.liveMusic8900Wrapper}>
         <Text
           style={[

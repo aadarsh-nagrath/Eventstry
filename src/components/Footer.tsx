@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Text, StyleSheet, View, ImageSourcePropType } from "react-native";
+import { Text, StyleSheet, View, ImageSourcePropType, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { Padding, Color, FontFamily, FontSize } from "../../GlobalStyles";
 
@@ -103,7 +103,7 @@ const Footer = ({
   );
 };
 
-const styles = StyleSheet.create({
+const baseStyles = StyleSheet.create({
   framePosition: {
     width: "100%",
     overflow: "hidden",
@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.avenir,
     fontWeight: "500",
     fontSize: FontSize.size_base,
+    display: "flex"
   },
   privacyPolicyWrapper: {
     left: 222,
@@ -225,10 +226,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   frameParent: {
-    top: "99%",
+    top: "100%",
     backgroundColor: Color.colorAntiquewhite,
     height: 365,
   },
+
+  
 });
+
+const { width, height } = Dimensions.get("window");
+let styles = { ...baseStyles };
+
+if (width >=360 && width < 415  && height <= 900) {
+  styles = StyleSheet.create({
+    ...baseStyles,
+    frameParent: {
+      top: 0,
+      bottom: "100%",
+      backgroundColor: Color.colorAntiquewhite,
+      height: 365,
+    },
+    eventstryAllRights:{
+      display:"none"
+    }
+  });
+}
+
 
 export default Footer;
