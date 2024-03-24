@@ -5,17 +5,18 @@ import HeaderComponent from "../components/HeaderComponent";
 import Footer from "../components/Footer";
 import TermsAndConditions from "../components/TermsAndConditions";
 import styles from "./ExplorePageStyles";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontFamily, Color, Padding, FontSize, Border } from "../../GlobalStyles";
 import Menu from "./Menu";
 import { useState } from "react";
 import FlotingBookNow from "../components/FlotingBookNow";
 
 
-const ExplorePage = ({ route }) => {
+const ExplorePage = () => {
   const { width, height } = Dimensions.get("window");
     const navigation = useNavigation(); 
     const [modalVisible, setModalVisible] = useState(false);
+    const route = useRoute<{ params: { imageSource: string, price: number, heading: string, description: string, address: string } } & { key: string, name: string }>();
     const { imageSource, price, heading, description, address } = route.params;
 
     const handleSeeMenuClick = () => {
@@ -38,6 +39,7 @@ const ExplorePage = ({ route }) => {
       };
 
     return (
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.view}>
         <View style={styles2.alignfix}>
                 <View style={styles.mainContent}>
@@ -161,7 +163,7 @@ const ExplorePage = ({ route }) => {
                   heading={heading}
                   description={description}
                   address={address}
-                  frameViewTop={850}
+                  frameViewTop={1600}
                 />
               </View>
             )}
@@ -185,6 +187,7 @@ const ExplorePage = ({ route }) => {
                 </View>
             </Modal>
       </View>
+      </ScrollView>
     );
   };
   

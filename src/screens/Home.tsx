@@ -50,6 +50,7 @@ const Home = () => {
 
 
   return (
+    <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.container}>
       <View style={[styles.view, styles.groupLayout]}>
         <View style={styles.frameParent}>
@@ -196,11 +197,12 @@ const Home = () => {
       
       <Footer
         uniqueIdentifier={require("../../assets/instagramfsvgrepocom-2-11.png")}
-        frameViewTop={2058}
+        frameViewTop={width >= 360 && width < 415 ? 4500 : 2058}
       />
       
       </View>
     </View>
+    </ScrollView> 
   );
 };
 

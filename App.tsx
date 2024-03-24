@@ -1,20 +1,31 @@
 import React from "react";
+import { BackHandler, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet } from "react-native"; // Added import
-import SignInPage from "./src/screens/SignInPage";
-import SignUpPage from "./src/screens/SignUpPage";
-import SeeMenu from "./src/screens/SeeMenu";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { IconRegistry, ApplicationProvider } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
-
+import { navigationRef } from "./navigationRef"; // Import navigationRef
+import SignInPage from "./src/screens/SignInPage";
+import SignUpPage from "./src/screens/SignUpPage";
+import SeeMenu from "./src/screens/SeeMenu";
 import Home from "./src/screens/Home";
 import ExplorePage from "./src/screens/ExplorePage";
 
 const Stack = createStackNavigator();
 
 const App = () => {
+  React.useEffect(() => {
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        return navigationRef.current?.canGoBack();
+      }
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   function MaterialIcon({ name, style }) {
     const { height, tintColor, ...iconStyle } = StyleSheet.flatten(style);
     return (
@@ -23,7 +34,7 @@ const App = () => {
   }
 
   const IconProvider = (name) => ({
-    toReactElement: (props) => <MaterialIcon name={name} {...props} />, // Corrected usage of MaterialIcon component
+    toReactElement: (props) => <MaterialIcon name={name} {...props} />,
   });
 
   function createIconsMap() {
@@ -46,7 +57,7 @@ const App = () => {
     <>
       <IconRegistry icons={[MaterialIconsPack]} />
       <ApplicationProvider {...eva} theme={eva.light}>
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <Stack.Navigator initialRouteName="SignInPage" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="SignInPage" component={SignInPage} />
             <Stack.Screen name="SignUpPage" component={SignUpPage} />

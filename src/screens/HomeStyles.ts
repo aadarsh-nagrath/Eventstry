@@ -296,6 +296,11 @@ if (width >=360 && width < 415  && height <= 900) {
     frameParent:{
       display: "none"
     },
+    view: {
+      height: 2420,
+      backgroundColor: Color.colorWhite,
+      width: "100%",
+    },
   });
 }
 

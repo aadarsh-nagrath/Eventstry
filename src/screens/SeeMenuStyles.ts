@@ -251,6 +251,24 @@ const baseStyles = StyleSheet.create({
       top: 3706,
       position: "absolute",
     },
+    // df1:{
+    //   marginBottom:0,
+    // },
+    // df2:{
+    //   marginBottom:0,
+    // },
+    df3:{
+      marginBottom:0,
+    },
+    // df4:{
+    //   marginBottom:0,
+    // },
+    // df5:{
+    //   marginBottom:0,
+    // },
+    // df6:{
+    //   marginBottom:0,
+    // },
     groupInner: {
       top: 40,
       maxWidth: "100%",
@@ -351,7 +369,7 @@ const baseStyles = StyleSheet.create({
       color: Color.grayGray91F2730,
     },
     text6: {
-      color: Color.colorRed,
+      color: Color.colorAntiquewhite,
     },
     pleaseSelectTheContainer: {
       top: 37,
@@ -373,7 +391,7 @@ const baseStyles = StyleSheet.create({
       height: 19,
     },
     iconOutlinedCalendar: {
-      width: 20,
+      width: 25,
       height: 20,
       marginLeft: -22,
       overflow: "hidden",
@@ -830,7 +848,7 @@ const baseStyles = StyleSheet.create({
       overflow: "hidden",
       transform: [{rotate: '-90deg'}],
       marginTop: -200,
-      backgroundColor: "green",
+      backgroundColor: Color.colorWhite,
       zIndex: 2,
     },
     vectorParent: {
@@ -839,7 +857,7 @@ const baseStyles = StyleSheet.create({
       height: 440,
       width: 40,
       position: "absolute",
-      backgroundColor: "red",
+      backgroundColor: Color.colorWhite,
     },
     text1: {
       left: 14,
@@ -878,7 +896,7 @@ const baseStyles = StyleSheet.create({
       paddingTop: Padding.p_5xs,
       paddingLeft: Padding.p_base,
       height: 51,
-      width: 345,
+      width: 285,
       alignItems: "center",
       flexDirection: "row",
       borderWidth: 0.8,
@@ -953,6 +971,13 @@ const baseStyles = StyleSheet.create({
       top: 577,
       height: 691,
       borderColor: Color.colorGainsboro,
+    },
+    iconOutlinedCalendar: {
+      width: 40,
+      height: 20,
+      marginLeft: -68,
+      overflow: "hidden",
+      zIndex:2,
     },
     component3: {
       left: 90,
@@ -1051,6 +1076,24 @@ const baseStyles = StyleSheet.create({
       fontWeight: "500",
       position: "absolute",
     },
+    df1:{
+      marginTop:70,
+    },
+    df2:{
+      marginTop:50,
+    },
+    df3:{
+      marginTop: 30
+    },
+    df4:{
+      marginTop:5,
+    },
+    df5:{
+      marginTop:-20,
+    },
+    df6:{
+      marginTop:-40,
+    },
     mbl: {
       padding: Padding.p_base,
       width: 300,
@@ -1075,6 +1118,14 @@ const baseStyles = StyleSheet.create({
     groupItem: {
       height: 62,
       width: 325,
+    },
+    inputbox: {
+      position: "relative",
+      bottom: "50%",
+      right: "2%",
+      backgroundColor: "transparent",
+      border: "none",
+      size: 16
     },
     });
   }

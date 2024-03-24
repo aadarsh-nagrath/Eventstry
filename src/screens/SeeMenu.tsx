@@ -88,7 +88,7 @@ const SeeMenu = () => {
             contentFit="cover"
             source={require("../../assets/vector-3971.png")}
           />
-          <View style={[styles.ellipseParent, styles.groupChildLayout1]}>
+          <View style={[styles.ellipseParent, styles.groupChildLayout1, styles.df1]}>
             <Image
               id="header-img"
               style={[styles.ellipseParent, styles.groupChildLayout1]}
@@ -97,7 +97,7 @@ const SeeMenu = () => {
             />
             <Text style={[styles.text1, styles.textTypo]}>1</Text>
           </View>
-          <View style={[styles.ellipseGroup, styles.groupChildLayout1]}>
+          <View style={[styles.ellipseGroup, styles.groupChildLayout1, styles.df2]}>
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
@@ -105,7 +105,7 @@ const SeeMenu = () => {
             />
             <Text style={[styles.text1, styles.textTypo]}>2</Text>
           </View>
-          <View style={[styles.ellipseContainer, styles.groupChildLayout1]}>
+          <View style={[styles.ellipseContainer, styles.groupChildLayout1, styles.df3]}>
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
@@ -113,7 +113,7 @@ const SeeMenu = () => {
             />
             <Text style={[styles.text1, styles.textTypo]}>3</Text>
           </View>
-          <View style={[styles.groupView, styles.groupChildLayout1]}>
+          <View style={[styles.groupView, styles.groupChildLayout1, styles.df4]}>
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
@@ -126,7 +126,7 @@ const SeeMenu = () => {
             contentFit="cover"
             source={require("../../assets/vector-3971.png")}
           />
-          <View style={[styles.ellipseParent1, styles.groupChildLayout1]}>
+          <View style={[styles.ellipseParent1, styles.groupChildLayout1, styles.df5]}>
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
@@ -139,7 +139,7 @@ const SeeMenu = () => {
             contentFit="cover"
             source={require("../../assets/vector-3971.png")}
           />
-          <View style={[styles.ellipseParent2, styles.groupChildLayout1]}>
+          <View style={[styles.ellipseParent2, styles.groupChildLayout1, styles.df6]}>
             <Image
               style={[styles.ellipseParent, styles.groupChildLayout1]}
               contentFit="cover"
@@ -171,7 +171,7 @@ const SeeMenu = () => {
           <View style={styles.ddmmyyyyWrapper}>
             <Input
               placeholder="DD/MM/YYYY"
-              style={[styles.inputbox, {flex:10}]} // adjust the style as needed
+              style={[styles.inputbox, {flex:10}]}
             />
           </View>
           <Image
