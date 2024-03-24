@@ -160,8 +160,7 @@ const baseStyles = StyleSheet.create({
 const { width, height } = Dimensions.get("window");
 let styles = { ...baseStyles };
 
-// Check if width is less than or equal to 360 and height is less than or equal to 740
-if (width >=360 && width < 415  && height <= 900) {
+if (width >=360 && width <= 415) {
   styles = StyleSheet.create({
     ...baseStyles,
     logo39ab30e9cd984a48cdd3b9dbbIcon: {
@@ -179,6 +178,12 @@ if (width >=360 && width < 415  && height <= 900) {
       top: 180,
       width: 314,
     },
+    signTypo: {
+      color: Color.colorDarkslateblue,
+      fontFamily: FontFamily.avenir,
+      fontWeight: "800",
+      fontSize:17
+    },
     forgotPassword: {
       position: "absolute",
       left: 230,
@@ -192,7 +197,7 @@ if (width >=360 && width < 415  && height <= 900) {
       borderStyle: "solid",
       borderColor: Color.colorGainsboro,
       borderBottomWidth: 1,
-      width: 280,
+      width: 290,
     },
     groupItemLayout: {
       position: "absolute",

@@ -830,7 +830,7 @@ const baseStyles = StyleSheet.create({
   let styles = { ...baseStyles };
   
   // Check if width is less than or equal to 360 and height is less than or equal to 740
-  if (width >=360 && width < 415  && height <= 900) {
+  if (width >=360 && width < 415 ) {
     styles = StyleSheet.create({
       ...baseStyles,
       res: {

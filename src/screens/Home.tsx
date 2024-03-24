@@ -107,11 +107,11 @@ const Home = () => {
 
       
       <LinearGradient
-        style={[styles.frameGroup, styles.groupL, {marginBottom: 50}]}
+        style={[styles.frameGroup, {marginBottom: 50}]}
         locations={[0, 0.81]}
         colors={["#f4e9e3", "rgba(255, 255, 255, 0)"]}
       >
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-66.jpg")}
           price="₹8,900"
@@ -120,7 +120,7 @@ const Home = () => {
           address="Jio World Garden, Bandra Kurla Complex (BKC), Bandra East, Mumbai, Maharashtra 400051"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-62.png")}
           price="₹7,000"
@@ -129,7 +129,7 @@ const Home = () => {
           address="Jio World Garden, Bandra Kurla Complex (BKC), Bandra East, Mumbai, Maharashtra 400051"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-58.png")}
           price="₹10,500"
@@ -138,7 +138,7 @@ const Home = () => {
           address="Grand Palace, Juhu Tara Road, Juhu, Mumbai, Maharashtra 400049"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-65.jpg")}
           price="₹7,200"
@@ -147,7 +147,7 @@ const Home = () => {
           address="Sapphire Gardens, Andheri West, Mumbai, Maharashtra 400058"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-66.jpg")}
           price="₹9,800"
@@ -156,7 +156,7 @@ const Home = () => {
           address="Emerald Meadows, Powai, Mumbai, Maharashtra 400076"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-62.png")}
           price="₹11,300"
@@ -165,7 +165,7 @@ const Home = () => {
           address="Pearl Palace, Worli Sea Face, Mumbai, Maharashtra 400030"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-58.png")}
           price="₹8,600"
@@ -174,7 +174,7 @@ const Home = () => {
           address="Royal Orchid Hall, Lower Parel, Mumbai, Maharashtra 400013"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-62.png")}
           price="₹12,000"
@@ -183,7 +183,7 @@ const Home = () => {
           address="Majestic Manor, Malabar Hill, Mumbai, Maharashtra 400006"
         />
       </View>
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, (width > 380 && width <= 415 ) ? {marginLeft: 10} : null]}>
         <DisplayCard
           imageSource={require("../../assets/rectangle-65.jpg")}
           price="₹6,900"

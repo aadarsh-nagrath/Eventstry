@@ -237,7 +237,7 @@ const baseStyles = StyleSheet.create({
 const { width, height } = Dimensions.get("window");
 let styles = { ...baseStyles };
 
-if (width >=360 && width < 415  && height <= 900) {
+if (width >=360 && width < 415 ) {
   styles = StyleSheet.create({
     ...baseStyles,
     frameParent: {

@@ -265,7 +265,7 @@ const baseStyles2 = StyleSheet.create({
 const { width, height } = Dimensions.get("window");
 let styles2 = { ...baseStyles2 };
 
-if (width >=360 && width < 415  && height <= 900) {
+if (width >=360 && width < 415 ) {
   styles2 = StyleSheet.create({
     ...baseStyles2,
     seemenu: {

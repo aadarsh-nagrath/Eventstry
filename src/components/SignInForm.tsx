@@ -11,7 +11,7 @@ const SignInForm = () => {
     <View style={{ flexDirection: "row", alignItems: "center", display: "flex" }}>
       <View style={[styles.groupChild, styles.groupLayout1]} />
       <Image
-        style={[styles.key3SvgrepoCom1Icon, {flex: 1, height: 25, width: 25, resizeMode: "contain"}]}
+        style={[styles.key3SvgrepoCom1Icon, {flex: 1, resizeMode: "contain"}]}
         contentFit="contain"
         source={require("../../assets/call192svgrepocom-3-1.png")}
       />
@@ -149,7 +149,7 @@ const { width, height } = Dimensions.get("window");
 let styles = { ...baseStyles };
 
 // Check if width is less than or equal to 360 and height is less than or equal to 740
-if (width >=360 && width < 415  && height <= 900) {
+if (width >=360 && width < 415 ) {
   styles = StyleSheet.create({
     ...baseStyles,
     rectangleParent:{
@@ -173,6 +173,13 @@ if (width >=360 && width < 415  && height <= 900) {
       backgroundColor: Color.colorWhite,
       borderRadius: Border.br_3xs,
       position: "absolute",
+    },
+    key3SvgrepoCom1Icon: {
+      width: 18,
+      height: 18,
+      bottom: 23,
+      overflow: "hidden",
+      position: "relative",
     },
   });
 }
