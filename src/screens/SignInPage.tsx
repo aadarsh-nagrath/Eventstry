@@ -43,9 +43,9 @@ const SignInPage = () => {
           <View >
           <View style={[styles.fix]}>
             <View style={[styles.signInParent, styles.signPosition, styles.f]}>
-              <Text style={[styles.signIn, styles.signTypo]}>Sign in</Text>
+              <Text style={[styles.signIn, styles.signTypo, (width >= 360 && width <= 415 ) && {fontSize: 25}]}>Sign in</Text>
             </View>
-            <Text style={[styles.unlockYourWorld, styles.andClr]}>
+            <Text style={[styles.unlockYourWorld, styles.andClr, (width >= 360 && width <= 415  && height <=739) && {marginTop: -24}]}>
               Unlock Your World: Sign in now to dive into personalized events planning
               tailored to your interests!
             </Text>

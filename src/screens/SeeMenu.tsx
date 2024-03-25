@@ -156,7 +156,8 @@ const SeeMenu = () => {
         style={[
           styles.pleaseSelectTheEventDateParent,
           styles.addParentShadowBox,
-          {zIndex: 3}
+          {zIndex: 3},
+          scrollPosition > 350 ? styles.boxselect : null
         ]}
       >
         <Text
@@ -249,6 +250,7 @@ const SeeMenu = () => {
         style={[
           styles.pleaseSelectOneOfThePackaParent,
           styles.addParentShadowBox,
+          scrollPosition > 350 && scrollPosition < 960 ? styles.boxselect : null
         ]}
       >
         <Text style={[styles.pleaseSelectOne, styles.addContainerTypo]}>
@@ -282,6 +284,7 @@ const SeeMenu = () => {
         style={[
           styles.whatKindOfDecorationWouldParent,
           styles.addParentShadowBox,
+          scrollPosition > 960 && scrollPosition < 1760 ? styles.boxselect : null
         ]}
       >
         <Text style={[styles.whatKindOf, styles.addContainerTypo]}>
@@ -341,7 +344,7 @@ const SeeMenu = () => {
 
         {/* Add a CAKE Component*/}
       
-      <View style={[styles.addACakeParent, styles.addParentShadowBox]}>
+      <View style={[styles.addACakeParent, styles.addParentShadowBox, scrollPosition > 1760 && scrollPosition < 2260 ? styles.boxselect : null]}>
         <Text style={[styles.addACake, styles.addContainerTypo]}>
           Add a Cake
         </Text>
@@ -362,25 +365,30 @@ const SeeMenu = () => {
 
         {/* Add Photographer Component */}
 
-      <View style={[styles.addAPhotographerParent, styles.addParentShadowBox]}>
-        <Text style={[styles.addAPhotographer, styles.addContainerTypo]}>
-          Add a Photographer
-        </Text>
-        <View style={[styles.fd,styles.frameParent1, styles.component3Position]}>
-          <View style={[styles.groupParent6, styles.groupLayout]}>
-            <View style={styles.yesWrapper}>
-              <Text style={[styles.yes, styles.containerPosition]}>Yes</Text>
-            </View>
-            <RectangleRadioButton selected={isChecked} onSelect={handlePress} />
-          </View>
-          <View style={[styles.groupParent7, styles.groupLayout]}>
-            <View style={styles.noWrapper}>
-              <Text style={[styles.yes, styles.containerPosition]}>No</Text>
-            </View>
-            <RectangleRadioButton selected={!isChecked} onSelect={handlePress} />
+        <View style={[styles.addAPhotographerParent, styles.addParentShadowBox, scrollPosition > 2260 && scrollPosition < 2460 ? styles.boxselect : null]}>
+          <Text style={[styles.addAPhotographer, styles.addContainerTypo]}>
+            Add a Photographer
+          </Text>
+          <View style={[styles.fd, styles.frameParent1, styles.component3Position]}>
+            <TouchableOpacity onPress={handlePress}>
+              <View style={[styles.groupParent6, styles.groupLayout, isChecked && styles.selectedItem ]}>
+                <View style={styles.yesWrapper}>
+                  <Text style={[styles.yes, styles.containerPosition]}>Yes</Text>
+                </View>
+                <RectangleRadioButton selected={isChecked} onSelect={handlePress} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handlePress}>
+              <View style={[styles.groupParent7, styles.groupLayout, !isChecked && styles.selectedItem,]}>
+                <View style={styles.noWrapper}>
+                  <Text style={[styles.yes, styles.containerPosition]}>No</Text>
+                </View>
+                <RectangleRadioButton selected={!isChecked} onSelect={handlePress} />
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
-      </View>
+
 
         {/* Add Entertainment Component */}
 
@@ -388,6 +396,7 @@ const SeeMenu = () => {
         style={[
           styles.whatKindOfEntertainmentWouParent,
           styles.addParentShadowBox,
+          scrollPosition > 2460 ? styles.boxselect : null
         ]}
       >
         <Text style={[styles.whatKindOf1, styles.addContainerTypo]}>

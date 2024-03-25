@@ -44,7 +44,8 @@ const IntimateDecorationC = ({
   };
 
   return (
-    <View style={[styles.frameParent, styles.frameBorder, frameView3Style]}>
+    <TouchableOpacity onPress={handlePress}>
+    <View style={[styles.frameParent, styles.frameBorder, frameView3Style, isChecked && styles.selectedItem]}>
       <Image
         style={styles.frameChild}
         contentFit="cover"
@@ -72,10 +73,14 @@ const IntimateDecorationC = ({
       </View>
       <RectangleRadioButton selected={isChecked} onSelect={handlePress} />
     </View>
+    </TouchableOpacity>
   );
 };
 
 const baseStyles = StyleSheet.create({
+  selectedItem: {
+    borderColor: Color.colorDarkslateblue,
+  },
   frameBorder: {
     borderColor: Color.colorGray_200,
     borderStyle: "solid",

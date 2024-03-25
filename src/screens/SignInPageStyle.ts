@@ -160,6 +160,18 @@ const baseStyles = StyleSheet.create({
 const { width, height } = Dimensions.get("window");
 let styles = { ...baseStyles };
 
+// if (width >=370 && width <= 415 && height <= 690) {
+//   styles = StyleSheet.create({
+//     ...baseStyles,
+//     unlockYourWorld: {
+//       position: "absolute",
+//       left: "8%",
+//       top: 150,
+//       width: 314,
+//     },
+//   });
+// }
+
 if (width >=360 && width <= 415) {
   styles = StyleSheet.create({
     ...baseStyles,

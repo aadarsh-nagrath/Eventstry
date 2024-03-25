@@ -45,14 +45,15 @@ const ExplorePage = () => {
                 <View style={styles.mainContent}>
                 <HeaderComponent />
                 <View style={styles.backParent}>
-                <Text onPress={() => navigation.navigate("Home")} style={[styles.back, styles.backTypo]}>{width >= 360 && width < 415 ? "⬅" : "Back" }</Text>
+                <Text onPress={() => navigation.navigate("Home")} style={[styles.back, styles.backTypo]}>{width >= 360 && width < 415 ? <Image style={{height:25, width:25}} source={require("../../assets/back-arrow.png")} /> : "Back" }</Text>
                 <Image
                     style={[styles.groupItem, styles.groupItemPosition]}
                     contentFit="cover"
                     source={imageSource}
                 />
                 <View style={[styles.groupInner, styles.frameGroupPosition]} />
-                <View style={[styles.aboutWrapper, styles.wrapperPosition]}>
+                
+                <View style={[styles.wrapperPosition]}>
                     <Text style={[styles.about, styles.backTypo1]}>About</Text>
                 </View>
                 <Text style={[styles.welcomeToEventstry, styles.jioWorldGardenTypo]}>
@@ -108,9 +109,9 @@ const ExplorePage = () => {
                     />
                     </View>
                     <View
-                    style={[styles.thingsToKeepInMindParent, styles.parentPosition]}
+                    style={[styles.thingsToKeepInMindParent, styles.parentP]}
                     >
-                    <Text style={[styles.thingsToKeep, styles.aboutTypo]}>
+                    <Text style={[styles.thingsToKeep, styles.about, styles.things]}>
                         Things to Keep in mind
                     </Text>
                     <Text
@@ -269,7 +270,7 @@ if (width >=360 && width < 415 ) {
   styles2 = StyleSheet.create({
     ...baseStyles2,
     seemenu: {
-      top: 490,
+      top: 510,
     },
     wrapperPosition:{
       top: 30,

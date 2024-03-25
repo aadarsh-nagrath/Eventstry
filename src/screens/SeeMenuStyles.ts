@@ -392,7 +392,7 @@ const baseStyles = StyleSheet.create({
     },
     iconOutlinedCalendar: {
       width: 25,
-      height: 20,
+      height: 25,
       marginLeft: -22,
       overflow: "hidden",
     },
@@ -490,7 +490,7 @@ const baseStyles = StyleSheet.create({
     
     pleaseSelectTheEventDateParent: {
       height: 233,
-      borderColor: Color.colorDarkslateblue,
+      borderColor: Color.grayGray91F2730,
       top: 126,
     },
     pleaseSelectOne: {
@@ -540,6 +540,9 @@ const baseStyles = StyleSheet.create({
       left: 67,
       position: "absolute",
     },
+    selectedItem: {
+      borderColor: Color.colorDarkslateblue,
+    },
     fd:{
       marginTop: 30
     },
@@ -570,6 +573,9 @@ const baseStyles = StyleSheet.create({
       top: 387,
       height: 621,
       borderColor: Color.colorGainsboro,
+    },
+    boxselect: {
+      borderColor: "Black",
     },
     whatKindOf: {
       marginLeft: -165,
@@ -931,6 +937,10 @@ const baseStyles = StyleSheet.create({
       fontSize: FontSize.size_lg,
       position: "absolute",
     },
+    liveMusic8900Wrapper: {
+      width: 250,
+      height: 50,
+    },
     frameParent: {
       width: 142,
       top: 304,
@@ -973,10 +983,9 @@ const baseStyles = StyleSheet.create({
       borderColor: Color.colorGainsboro,
     },
     iconOutlinedCalendar: {
-      width: 40,
-      height: 20,
-      marginLeft: -68,
-      overflow: "hidden",
+      width: 25,
+      height: 25,
+      marginLeft: -38,
       zIndex:2,
     },
     component3: {
@@ -1030,6 +1039,10 @@ const baseStyles = StyleSheet.create({
       borderRadius: Border.br_3xs,
       borderStyle: "solid",
     },
+    ddmmyyyyWrapper: {
+      width: 270,
+      height: 35,
+    },
     whatKindOf: {
       marginLeft: -165,
       top: 24,
@@ -1049,6 +1062,10 @@ const baseStyles = StyleSheet.create({
       top: 2750,
       height: 237,
       borderColor: Color.colorGainsboro,
+    },
+    liveMusic: {
+      color: Color.colorDarkslateblue,
+      width:250,
     },
     frameParent1: {
       left: 0,
@@ -1101,6 +1118,10 @@ const baseStyles = StyleSheet.create({
       borderRadius: Border.br_3xs,
       borderStyle: "solid",
     },
+    addContainerTypo: {
+      fontSize: 16,
+      textAlign: "left",
+    },
     view: {
       flex: 1,
       height: 4521,
@@ -1121,11 +1142,11 @@ const baseStyles = StyleSheet.create({
     },
     inputbox: {
       position: "relative",
-      bottom: "50%",
+      bottom: "10%",
       right: "2%",
       backgroundColor: "transparent",
       border: "none",
-      size: 16
+      width: 240,
     },
     });
   }

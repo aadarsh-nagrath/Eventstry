@@ -22,7 +22,8 @@ const EntertainmentCompo = (props) => {
   };  
 
   return (
-    <View style={[styles.groupParent6, styles.mbl]}>
+    <TouchableOpacity onPress={handlePress}>
+    <View style={[styles.groupParent6, styles.mbl, isChecked && styles.selectedItem]}>
       <View style={styles.liveMusic8900Wrapper}>
         <Text
           style={[
@@ -37,6 +38,7 @@ const EntertainmentCompo = (props) => {
       </View>
       <RectangleRadioButton selected={isChecked} onSelect={handlePress} />
     </View>
+    </TouchableOpacity>
   );
 };
 

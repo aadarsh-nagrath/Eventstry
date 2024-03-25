@@ -34,7 +34,8 @@ const ProductCardContainer = ({ propMarginTop }: ProductCardContainerType) => {
   };
 
   return (
-    <View style={[styles.groupParent, frameView4Style]}>
+    <TouchableOpacity onPress={handlePress}>
+    <View style={[styles.groupParent, frameView4Style, isChecked && styles.selectedItem]}>
       <View style={styles.vanilla05kg550Parent}>
         <Text style={styles.vanilla05kgContainer}>
           <Text style={styles.vanilla05kg}>{`Vanilla - 0.5Kg
@@ -56,10 +57,14 @@ const ProductCardContainer = ({ propMarginTop }: ProductCardContainerType) => {
       </View>
       <RectangleRadioButton selected={isChecked} onSelect={handlePress} />
     </View>
+    </TouchableOpacity>
   );
 };
 
 const baseStyles = StyleSheet.create({
+  selectedItem: {
+    borderColor: Color.colorDarkslateblue,
+  },
   vanilla05kg: {
     color: Color.grayGray91F2730,
   },

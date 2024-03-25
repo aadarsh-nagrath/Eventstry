@@ -47,6 +47,7 @@ const baseStyles = StyleSheet.create({
       borderBottomWidth: 1,
       alignItems: "center",
       width: 750,
+      top: 426,
       borderColor: Color.colorGainsboro,
       borderStyle: "solid",
       left: 0,
@@ -85,6 +86,10 @@ const baseStyles = StyleSheet.create({
       position: "absolute",
     },
     parentPosition: {
+      left: 16,
+      position: "absolute",
+    },
+    parentP: {
       left: 16,
       position: "absolute",
     },
@@ -176,6 +181,9 @@ const baseStyles = StyleSheet.create({
       lineHeight: 28,
       textAlign: "left",
       fontFamily: FontFamily.avenir,
+    },
+    things:{
+      display:"flex"
     },
     aboutWrapper: {
       top: 426,
@@ -366,21 +374,31 @@ const baseStyles = StyleSheet.create({
       component3Parent: {
         backgroundColor: Color.colorSnow,
         borderColor: Color.colorPeachpuff,
-        height: 250,
+        height: 150,
         width: 320,
         borderRadius: Border.br_3xs,
         top: 0,
-        overflow: "hidden",
       },
       parentLayout: {
-        height: 250,
+        height: 150,
         width: 320,
-        overflow: "hidden",
+      },
+      parentP: {
+        left: -8,
+        position: "absolute",
+        top:170
       },
       frameParent: {
         left: 6,
         top: 176,
         position: "absolute",
+      },
+      things:{
+        width: 210,
+        borderBottomWidth: 2,
+        borderBottomColor:Color.colorDarkslateblue,
+        borderStyle: "solid",
+        fontWeight: "800",
       },
       backParent: {
         top: 80,
@@ -394,9 +412,22 @@ const baseStyles = StyleSheet.create({
         width: 330,
         left: 0,
       },
-      wrapperPosition:{
-        top: 250,
-        width: 330,
+      cancellationPolicyAnd: {
+        marginTop: 8,
+        width: 290,
+        height:75,
+        fontSize: FontSize.size_base,
+        overflow: "hidden",
+      },
+      wrapperPosition: {
+        paddingBottom: Padding.p_base,
+        paddingTop: Padding.p_9xl,
+        flexDirection: "row",
+        alignItems: "center",
+        width: 200,
+        top: 440,
+        left: 0,
+        position: "absolute",
       },
       jioWorldGardenTypo:{
         position: "absolute",

@@ -19,7 +19,8 @@ const StarterComponent = () => {
     };
 
   return (
-    <View style={[styles.groupFrame, styles.groupLayout]}>
+    <TouchableOpacity onPress={handlePress}>
+    <View style={[styles.groupFrame, styles.groupLayout, isChecked && styles.selectedItem]}>
       <View style={styles.groupParent1}>
         <View
           style={[
@@ -47,6 +48,7 @@ const StarterComponent = () => {
     </View>
       </View>
     </View>
+    </TouchableOpacity>
   );
 };
 

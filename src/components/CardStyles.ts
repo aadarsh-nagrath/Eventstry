@@ -171,6 +171,10 @@ const baseStyles = StyleSheet.create({
         marginTop: 16,
         width: 300,
       },
+      iconLayout: {
+        height: 26,
+        width: 30,
+      },
       groupLayout: {
         height: 48,
         width: 300,
