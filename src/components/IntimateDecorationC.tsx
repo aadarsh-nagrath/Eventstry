@@ -45,7 +45,7 @@ const IntimateDecorationC = ({
 
   return (
     <TouchableOpacity onPress={handlePress}>
-    <View style={[styles.frameParent, styles.frameBorder, frameView3Style, isChecked && styles.selectedItem]}>
+    <View style={[styles.frameParent, styles.frameBorder, frameView3Style, isChecked && [styles.selectedItem, {borderWidth: 3}]]}>
       <Image
         style={styles.frameChild}
         contentFit="cover"
@@ -84,6 +84,8 @@ const baseStyles = StyleSheet.create({
   frameBorder: {
     borderColor: Color.colorGray_200,
     borderStyle: "solid",
+    borderRadius: Border.br_3xs,
+    borderWidth: 1,
   },
   textTypo: {
     fontWeight: "800",
@@ -149,8 +151,6 @@ const baseStyles = StyleSheet.create({
     marginLeft: -308,
     top: 73,
     left: "50%",
-    borderRadius: Border.br_3xs,
-    borderWidth: 1,
     width: 617,
     flexDirection: "row",
     alignItems: "center",

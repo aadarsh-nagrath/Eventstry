@@ -80,7 +80,7 @@ const ExplorePage = () => {
                     <View
                     style={[styles.component3Parent, styles.component3ParentBorder]}
                     >
-                    <View style={[styles.component31, styles.mbfix]}>
+                    {/* <View style={[styles.component31, styles.mbfix]}>
                     <TouchableOpacity onPress={openModal}>
                         <Text style={styles.seeMenu}>See Menu</Text>
                         </TouchableOpacity>
@@ -89,7 +89,7 @@ const ExplorePage = () => {
                         contentFit="cover"
                         source={require("../../assets/divscardicon.png")}
                         />
-                    </View>
+                    </View> */}
                     <TouchableOpacity style={styles.mbfix} onPress={handleSeeMenuClick}>
                     <View style={[styles.rectangleGroup, styles.rectanglePosition]}>
                         <View style={[styles.rectangleView, styles.rectanglePosition]} />

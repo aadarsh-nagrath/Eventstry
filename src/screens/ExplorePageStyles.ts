@@ -374,19 +374,19 @@ const baseStyles = StyleSheet.create({
       component3Parent: {
         backgroundColor: Color.colorSnow,
         borderColor: Color.colorPeachpuff,
-        height: 150,
+        height: 140,
         width: 320,
         borderRadius: Border.br_3xs,
         top: 0,
       },
       parentLayout: {
-        height: 150,
+        height: 140,
         width: 320,
       },
       parentP: {
         left: -8,
         position: "absolute",
-        top:170
+        top:156
       },
       frameParent: {
         left: 6,
@@ -415,7 +415,7 @@ const baseStyles = StyleSheet.create({
       cancellationPolicyAnd: {
         marginTop: 8,
         width: 290,
-        height:75,
+        height:88.5,
         fontSize: FontSize.size_base,
         overflow: "hidden",
       },
@@ -428,6 +428,18 @@ const baseStyles = StyleSheet.create({
         top: 440,
         left: 0,
         position: "absolute",
+      },
+      venue1Wrapper: {
+        paddingHorizontal: 0,
+        paddingVertical: Padding.p_xl,
+        width: 288,
+        flexDirection: "row",
+        borderBottomWidth: 1,
+        left: 16,
+        alignItems: "center",
+        borderColor: Color.colorDarkslateblue,
+        borderStyle: "solid",
+        top: 0,
       },
       jioWorldGardenTypo:{
         position: "absolute",

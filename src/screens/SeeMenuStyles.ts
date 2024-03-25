@@ -369,7 +369,7 @@ const baseStyles = StyleSheet.create({
       color: Color.grayGray91F2730,
     },
     text6: {
-      color: Color.colorAntiquewhite,
+      color: Color.colorTomato,
     },
     pleaseSelectTheContainer: {
       top: 37,
@@ -542,6 +542,8 @@ const baseStyles = StyleSheet.create({
     },
     selectedItem: {
       borderColor: Color.colorDarkslateblue,
+      borderStyle: "solid",
+      borderWidth:3,
     },
     fd:{
       marginTop: 30

@@ -35,7 +35,7 @@ const ProductCardContainer = ({ propMarginTop }: ProductCardContainerType) => {
 
   return (
     <TouchableOpacity onPress={handlePress}>
-    <View style={[styles.groupParent, frameView4Style, isChecked && styles.selectedItem]}>
+    <View style={[styles.groupParent, frameView4Style, isChecked && [styles.selectedItem, {borderWidth: 3}]]}>
       <View style={styles.vanilla05kg550Parent}>
         <Text style={styles.vanilla05kgContainer}>
           <Text style={styles.vanilla05kg}>{`Vanilla - 0.5Kg

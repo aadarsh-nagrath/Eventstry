@@ -73,7 +73,7 @@ const SeeMenu = () => {
 
       <View style={[styles.inner]}>
         <View style={[styles.vectorParent]}>
-          <Image
+          {/* <Image
             style={[styles.groupInner, styles.groupChildLayout1]}
             contentFit="cover"
             source={require("../../assets/vector-3971.png")}
@@ -87,7 +87,7 @@ const SeeMenu = () => {
             style={[styles.groupChild1, styles.groupChildLayout1]}
             contentFit="cover"
             source={require("../../assets/vector-3971.png")}
-          />
+          /> */}
           <View style={[styles.ellipseParent, styles.groupChildLayout1, styles.df1]}>
             <Image
               id="header-img"
