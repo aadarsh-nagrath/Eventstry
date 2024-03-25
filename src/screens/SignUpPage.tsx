@@ -42,10 +42,10 @@ const SignUpPage = () => {
         </View>
       </ImageBackground>
       <View style={[styles.fix]}>
-        <View style={[styles.signInParent, styles.signPosition, {width:300}]}>
+        <View style={[styles.signInParent, styles.signPosition, styles.f, {width:300}]}>
           <Text style={[styles.signIn, styles.signTypo]}>Sign up</Text>
         </View>
-        <Text style={[styles.unlockYourWorld, styles.andClr]}>
+        <Text style={[styles.unlockYourWorld, styles.andClr, (width >= 360 && width <= 415  && height <=739) && {marginTop: -25}]}>
         Unlock exclusive features, connect with like-minded individuals, and embark on your event 
         planning journey with us!
         </Text>

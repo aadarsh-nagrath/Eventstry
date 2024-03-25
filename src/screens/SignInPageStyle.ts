@@ -30,6 +30,11 @@ const baseStyles = StyleSheet.create({
     fontFamily: FontFamily.avenir,
     fontWeight: "800",
   },
+  signTypo2: {
+    color: Color.colorDarkslateblue,
+    fontFamily: FontFamily.avenir,
+    fontWeight: "800",
+  },
   andClr: {
     color: Color.grayGray91F2730,
     fontSize: FontSize.size_lg,
@@ -182,7 +187,7 @@ if (width >=360 && width <= 415) {
       left: 30,
     },
     f: {
-      top: 80,
+      top: 70,
     },
     unlockYourWorld: {
       position: "absolute",
@@ -191,6 +196,12 @@ if (width >=360 && width <= 415) {
       width: 314,
     },
     signTypo: {
+      color: Color.colorDarkslateblue,
+      fontFamily: FontFamily.avenir,
+      fontWeight: "800",
+      fontSize:25
+    },
+    signTypo2: {
       color: Color.colorDarkslateblue,
       fontFamily: FontFamily.avenir,
       fontWeight: "800",

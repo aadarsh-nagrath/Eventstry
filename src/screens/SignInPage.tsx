@@ -43,7 +43,7 @@ const SignInPage = () => {
           <View >
           <View style={[styles.fix]}>
             <View style={[styles.signInParent, styles.signPosition, styles.f]}>
-              <Text style={[styles.signIn, styles.signTypo, (width >= 360 && width <= 415 ) && {fontSize: 25}]}>Sign in</Text>
+              <Text style={[styles.signIn, styles.signTypo]}>Sign in</Text>
             </View>
             <Text style={[styles.unlockYourWorld, styles.andClr, (width >= 360 && width <= 415  && height <=739) && {marginTop: -24}]}>
               Unlock Your World: Sign in now to dive into personalized events planning
@@ -73,7 +73,7 @@ const SignInPage = () => {
             <Text style={[styles.noAccountYetContainer, styles.containerTypo]}>
               <Text style={styles.andClr}>{`No account yet? `}</Text>
               <TouchableOpacity onPress={() => naviagtion.navigate("SignUpPage")}>
-              <Text style={styles.signTypo}>Sign up</Text>
+              <Text style={styles.signTypo2}>Sign up</Text>
               </TouchableOpacity>
             </Text>
             </View>
